@@ -18,7 +18,6 @@
             font-size: 20px;
         }
         a{
-            color: #14FF2D;
             color: white;
             text-decoration: none;
         }
@@ -41,23 +40,39 @@
         article{
             padding-top: 56.4px;
             padding-left: 100px;
-            padding-right: 300px;
+            padding-right: 350px;
         }
         .side{
-            width: 200px;
+            width: 250px;
             height: 100%;
             background-color: #1D1F25;
             position: fixed;
             right: 0px;
             top: 0px;
-
+            text-align: center;
+        }
+        .side-container{
+            color:#14FF2D;
+            list-style-type: none;
+            padding-left: 30px;
+            padding-right: 30px;
         }
         #LOGO{
             color:#14FF2D;
             font-size: 20px;
             font-family: 'bitrocoreTTF';
         }
-
+        .next{
+            width: 210px;
+            height: 60px;
+            font-size: 40px;
+            background-color: #14FF2D;
+            color: #1D1F25;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+        }
         {% block style %}
         {% endblock %}
     </style>
@@ -85,7 +100,21 @@
     </article>
 
     <div class="side">
-        <p>안녕하세요</p>
+        <ul class="side-container">
+            <li><a href="#">소프트웨어 선택</a></li>
+            <p>▼</p>                      
+            <li><a href="#">소프트웨어 세부설정</a></li>
+            <p>▼</p>                      
+            <li><a href="#">추가기능 (1)</a></li>
+            <p>▼</p>                      
+            <li><a href="#">추가기능 (2)</a></li>
+            <p>▼</p>                      
+            <li><a href="#">노트북 선택</a></li>
+        </ul>
+    </div>
+
+    <div class="next">
+        <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
     </div>
 
 
