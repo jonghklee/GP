@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TITLE</title>
     <style>
+        @font-face {
+            font-family: 'bitrocoreTTF';
+            src: url('fonts/bitrocoreTTF.ttf');
+        }
         body{
             margin: 0;
             background-color: #2B2C36;
@@ -13,13 +17,11 @@
             color: white;
             font-size: 20px;
         }
-
         a{
             color: #14FF2D;
             color: white;
             text-decoration: none;
         }
-
         .nav-container{
             display: flex;
             flex-direction: row;
@@ -30,27 +32,30 @@
             list-style-type: none;
             background-color: #1D1F25;
         }
-
         nav{
             top:0;
         }
-
         .nav-item{
             padding: 15px;
-
         }
-
         article{
             padding-top: 56.4px;
             padding-left: 100px;
-            padding-right: 100px;
+            padding-right: 300px;
         }
+        .side{
+            width: 200px;
+            height: 100%;
+            background-color: #1D1F25;
+            position: fixed;
+            right: 0px;
+            top: 0px;
 
+        }
         #LOGO{
             color:#14FF2D;
-            font-size: 30px;
-
-
+            font-size: 20px;
+            font-family: 'bitrocoreTTF';
         }
 
         {% block style %}
@@ -62,7 +67,7 @@
     <nav>
         <!--네비게이션바 / 링크는 장고 제작 후에 설정-->
         <ul class="nav-container">
-            <li class="nav-item"><a href="#" id="LOGO"><strong>웹404</strong></a></li>
+            <li class="nav-item"><a href="#" id="LOGO">웹404</a></li>
             <li class="nav-item"><a href="#">노트북 선택</a></li>
             <li class="nav-item"><a href="#">노트북 둘러보기</a></li>
         </ul>
@@ -78,6 +83,10 @@
         {% endblock %}
 
     </article>
+
+    <div class="side">
+        <p>안녕하세요</p>
+    </div>
 
 
 </body>
