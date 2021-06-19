@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            color: #14FF2D;
+            text-decoration: none;
+        }
+
+        body{
+            margin: 0;
+            background-color: #2B2C36;
+            color: #14FF2D;
+            font-size: 20px;
+        }
+
+        .nav-container{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #1D1F25;
+            list-style-type: none;
+        }
+
+        .nav-item{
+            padding: 15px;
+
+        }
+
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!--네비게이션바 / 링크는 장고 제작 후에 설정-->
+        <ul class="nav-container">
+            <li class="nav-item"><a href="#">home</a></li>
+            <li class="nav-item"><a href="#">노트북 선택</a></li>
+            <li class="nav-item"><a href="#">노트북 둘러보기</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
