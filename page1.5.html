@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <style>
+        @font-face {
+            font-family: 'bitrocoreTTF';
+            src: url('fonts/bitrocoreTTF.ttf');
+        }
+        body{
+            margin: 0;
+            background-color: #2B2C36;
+            color: #14FF2D;
+            color: white;
+            font-size: 20px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .nav-container{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            list-style-type: none;
+            background-color: #1D1F25;
+        }
+        nav{
+            top:0;
+        }
+        .nav-item{
+            padding: 15px;
+        }
+        article{
+            padding-top: 56.4px;
+            padding-left: 100px;
+            padding-right: 350px;
+        }
+        .side{
+            width: 250px;
+            height: 100%;
+            background-color: #1D1F25;
+            position: fixed;
+            right: 0px;
+            top: 0px;
+            text-align: center;
+        }
+        .side-container{
+            color:#14FF2D;
+            list-style-type: none;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        #LOGO{
+            color:#14FF2D;
+            font-size: 20px;
+            font-family: 'bitrocoreTTF';
+        }
+        .next{
+            width: 210px;
+            height: 60px;
+            font-size: 40px;
+            background-color: #14FF2D;
+            color: #1D1F25;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+        }
+        .softwarebox{
+              background-color: white; 
+              box-sizing:border-box;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+              width:850px;
+              background: linear-gradient( to right ,#1D1F25,#2B2C36);
+              height:200px;
+              margin-left: -25px;
+              margin-top: 20px;
+              }
+         .software_image{
+                width: 150px;
+                height: 100px;
+                margin-left: 20px;
+                margin-top: 0px;
+                float: left;
+              }
+        .software-name{
+
+            color: #14FF2D;
+            padding: 10px 0 0 20px;
+    
+        }      
+        .form-label{
+            padding: 0 0 0 20px;
+        }
+
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <!--네비게이션바 / 링크는 장고 제작 후에 설정-->
+        <ul class="nav-container">
+            <li class="nav-item"><a href="#" id="LOGO">웹404</a></li>
+            <li class="nav-item"><a href="#">노트북 선택</a></li>
+            <li class="nav-item"><a href="#">노트북 둘러보기</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <div class="softwarebox">  
+            <p class="software-name"> <b>Battle Ground </b></p>
+            <img class="software_image" src="resource/battleground.png" alt="image" >
+            <!--조절바-->
+          <label for="customrange" class="form-label">사양정도</label>
+          <input type="range" class="form-range" min="0" max="5" step="0.5" id="customrange">
+          </div>
+          <br>
+          <div class="softwarebox">  
+            <p class="software-name"> <b>OverWatch </b></p>
+            <img class="software_image" src="resource/overwatch.jpg" alt="image" >
+            <!--조절바-->
+          <label for="customrange" class="form-label">사양정도</label>
+          <input type="range" class="form-range" min="0" max="5" step="0.5" id="customrange">
+          </div>
+
+    </article>
+
+    <div class="side">
+        <ul class="side-container">
+            <li><a href="#">소프트웨어 선택</a></li>
+            <p>▼</p>                      
+            <li><a href="#">소프트웨어 세부설정</a></li>
+            <p>▼</p>                      
+            <li><a href="#">추가기능 (1)</a></li>
+            <p>▼</p>                      
+            <li><a href="#">추가기능 (2)</a></li>
+            <p>▼</p>                      
+            <li><a href="#">노트북 선택</a></li>
+        </ul>
+    </div>
+
+    <div class="next">
+        <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
+    </div>
+   
+
+</body>
+</html>
