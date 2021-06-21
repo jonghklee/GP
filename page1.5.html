@@ -99,7 +99,31 @@
         }      
         .form-label{
             padding: 0 0 0 20px;
+            
         }
+      
+       button{
+           display:block;
+           background-color: #1D1F25;
+           border: 1px solid #14FF2D ;
+           cursor: pointer;
+           padding: 5px 10px 6px 7px;
+           color:#cccccc;
+           border-radius: 3px;
+       }
+       button img{
+           border: 0;
+           padding:0;
+           width: 16px;
+           height:16px;
+           
+       }
+       button.subm:hover{
+           background-color:#14FF2D;
+           border:1px solid #1D1F25;
+           color:#1D1F25;
+           border-radius: 3px;
+       }
 
         {% block style %}
         {% endblock %}
@@ -120,19 +144,71 @@
         <div class="softwarebox">  
             <p class="software-name"> <b>Battle Ground </b></p>
             <img class="software_image" src="resource/battleground.png" alt="image" >
-            <!--조절바-->
+           <!--조절바-->
+           <form>
           <label for="customrange" class="form-label">사양정도</label>
-          <input type="range" class="form-range" min="0" max="5" step="0.5" id="customrange">
-          </div>
-          <br>
+          <input type="range" class="form-range" min="0" max="2" step="1"  list="tickmarks"/>
+
+          <label for="customrange" class="form-label">그래픽</label>
+          <input type="range" class="form-range" min="0" max="2" step="1"  list="tickmarks"/>
+           <detalist id="tickmarks">
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+           </detalist>
+           <!--제출버튼-->
+           <button type="submit" class="subm" style="float: right">
+           
+               <img src="resource\arrowbutton-next.png" alt=""> &nbsp 저장
+           </button>
+        </form>
+        </div>
+
           <div class="softwarebox">  
             <p class="software-name"> <b>OverWatch </b></p>
             <img class="software_image" src="resource/overwatch.jpg" alt="image" >
             <!--조절바-->
-          <label for="customrange" class="form-label">사양정도</label>
-          <input type="range" class="form-range" min="0" max="5" step="0.5" id="customrange">
-          </div>
+            <form>
+                <label for="customrange" class="form-label">사양정도</label>
+                <input type="range" class="form-range" min="0" max="2" step="1"  list="tickmarks"/>
+      
+                <label for="customrange" class="form-label">그래픽</label>
+                <input type="range" class="form-range" min="0" max="2" step="1"  list="tickmarks"/>
+                 <detalist id="tickmarks">
+                  <option value="0"></option>
+                  <option value="1"></option>
+                  <option value="2"></option>
+                 </detalist>
+                 <!--제출버튼-->
+                 <button type="submit" class="subm" style="float: right">
+                 
+                     <img src="resource\arrowbutton-next.png" alt=""> &nbsp 저장
+                 </button>
+              </form>
+              </div>
 
+          <div class="softwarebox">  
+            <p class="software-name"> <b>League Of Legend </b></p>
+            <img class="software_image" src="resource\lol.png" alt="image" >
+            <!--조절바-->
+            <form>
+                <label for="customrange" class="form-label">사양정도</label>
+                <input type="range" class="form-range" min="0" max="2" step="1"  list="tickmarks"/>
+      
+                <label for="customrange" class="form-label">그래픽</label>
+                <input type="range" class="form-range" min="0" max="2" step="1"  list="tickmarks"/>
+                 <detalist id="tickmarks">
+                  <option value="0"></option>
+                  <option value="1"></option>
+                  <option value="2"></option>
+                 </detalist>
+                 <!--제출버튼-->
+                 <button type="submit" class="subm" style="float: right">
+                 
+                     <img src="resource\arrowbutton-next.png" alt=""> &nbsp 저장
+                 </button>
+              </form>
+              </div>
     </article>
 
     <div class="side">
