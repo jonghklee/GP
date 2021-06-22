@@ -1,12 +1,136 @@
 <!DOCTYPE html>
 <html lang="kr">
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>page 3.5</title>
+        <style>
+             @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+              #font{
+                font-family: 'Open Sans', sans-serif;
 
+            }
+         body{
+            margin: 0;
+            background-color: #2B2C36;
+           
+            position:relative;
+            
+          }
+          .back{
+              position:absolute;
+              margin-top:0;
+              left:50%;
+              margin-left:-400px;
+              box-sizing:border-box;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+              width:800px;
+              background: linear-gradient( to bottom ,#1D1F25,#2B2C36);
+              height:300px;
+              cursor: pointer;
+            
+        }
+        .laptop_image_big{
+                width: 300px;
+                height: 200px;
+                
+                margin: 20px 0px 20px 0px;
+                float: center;
+              }
+         .image_position{
+             text-align: center;
+             
+         } 
+         .setting{
+            
+              background: linear-gradient( to top ,#1D1F25,#2B2C36);
+              border: 2px #14FF2D;
+              width:800px;
+              height:300px;
+              position:absolute;
+             
+              
+              
+         }    
+         .laptop_name{
+
+            color: #14FF2D;
+            padding: 0px 0 0 30px;
+            margin 0;
+            
+            }  
+            .memo{
+                color:#cccccc;
+                text-align: center;
+            } 
+           .market{
+               width: 300px;
+               height:300px;
+               border: 1px #cccccc;
+               position:absolute;
+               left:20%;
+               top: 400px;
+               
+               margin-top:10px;
+           }
+           .market_logo{
+               width:70px;
+               height: 70px;
+               margin: 10px 10px 10px 10px;
+               border-radius: 3PX;
+               
+           }
+           .market_logo:hover{
+            
+           border:2px solid #14FF2D;
+           border-radius: 3PX;
+           }
+           .another{
+               width: 400px;
+               height:300px;
+              
+               position:absolute;
+               left:50%;
+               top: 400px;
+               margin-top:10px;
+           }
+        
+        </style>
     </head>
     <body>
+        <div class="back">
+            <div class="image_position"><img class="laptop_image_big" src="resource\samsungnotebpook.PNG" alt="image" ></div>
+
+                 <p class="laptop_name"  id="font"> [SAMSUNG] GalaxyBook Pro</p>
+                 <p class="memo" id="font">모델명: 15Z90P-GR56K</p>
+                 <p class="memo" id="font"> CPU: i5 / SSD: 512 GB/ memory: 8GB  </p>
+                 <p class="memo" id="font" >display: 15.6 inch, IPS LED / weight:1,120g/ color: white/ size: 357x224x17.4mm</p>
+            
+        </div>
+        <div class="market"> 
+            <p class="laptop_name">[쇼핑몰 바로가기]</p>
+            <a href="#https://www.samsung.com/sec/galaxybook/galaxy-book-pro-nt935xdb-kc58b/NT935XDB-KC58B/"><image class="market_logo" src="resource\sma_logo.jpg"></image></a>
+            <a href="#gmarket"><image class="market_logo" src="resource\gmarket.png"></image></a>
+            <a href="#11"><image class="market_logo" src="resource\11.jpg"></image></a>
+            <br/>
+            <a href="#G9"><image class="market_logo" src="resource\G9.png"></image></a>
+        
+        </div>
+        <div class="another"> 
+            <p class="laptop_name">[다른 노트북 둘러보기]</p>
+             <a href="#/"><image class="market_logo" src="resource\LG 360.jpg"></image></a>           
+            <a href="#"><image class="market_logo" src="resource\lg gram.jpg"></image></a>
+            <a href="#"><image class="market_logo" src="resource\macbook.jpg"></image></a>
+            <a href="#"><image class="market_logo" src="" ></image></a>
+            <br/>
+            <a href="#"><image class="market_logo" src=""></image></a>
+            <a href="#"><image class="market_logo" src=""></image></a>
+        </div>
         
     </body>
-    <p>3.5page</p>
 
+   
 
 </html>
