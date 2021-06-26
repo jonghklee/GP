@@ -21,8 +21,8 @@ from crawler import views as crawlerViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', crawlerViews.crawler, name="crawler"),
+    path('crawler/', crawlerViews.crawler, name="crawler"),
     path('A', include('input.urlsA')),
     path('B', include('input.urlsB')),
-    path('C', include('input.urlsC')),
+    path('', include('input.urlsC')),
 ]
