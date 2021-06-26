@@ -15,6 +15,7 @@ class SoftwareSpec(models.Model):
     vga = models.CharField(max_length=100)
     ram = models.IntegerField()
     hdd = models.IntegerField()
+    image = models.ImageField(upload_to = "softwarespec/", blank=True, null=True)
 
     def __str__(self):
         return self.name

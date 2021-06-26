@@ -18,6 +18,8 @@ from django.urls import path, include
 from input import views as inputViews
 from output import views as outputViews
 from crawler import views as crawlerViews
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +27,4 @@ urlpatterns = [
     path('A', include('input.urlsA')),
     path('B', include('input.urlsB')),
     path('', include('input.urlsC')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
