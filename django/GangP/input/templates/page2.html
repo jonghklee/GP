@@ -1,318 +1,178 @@
-<!DOCTYPE html>
-<html lang="kr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITLE</title>
-    <style>
-        @font-face {
-            font-family: 'bitrocoreTTF';
-            src: url('fonts/bitrocoreTTF.ttf');
-        }
-        body{
-            margin: 0;
-            background-color: #2B2C36;
-            color: #14FF2D;
-            color: white;
-            font-size: 20px;
-        }
-        a{
-            color: white;
-            text-decoration: none;
-        }
-        .nav-container{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            list-style-type: none;
-            background-color: #1D1F25;
-        }
-        nav{
-            top:0;
-        }
-        .nav-item{
-            padding: 15px;
-        }
-        article{
-            padding-top: 56.4px;
-            padding-left: 100px;
-            padding-right: 350px;
-        }
-        .side{
-            width: 250px;
-            height: 100%;
-            background-color: #1D1F25;
-            position: fixed;
-            right: 0px;
-            top: 0px;
-            text-align: center;
-        }
-        .side-container{
-            color:#14FF2D;
-            list-style-type: none;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-        #LOGO{
-            color:#14FF2D;
-            font-size: 20px;
-            font-family: 'bitrocoreTTF';
-        }
-        .next{
-            width: 210px;
-            height: 60px;
-            font-size: 40px;
-            background-color: #14FF2D;
-            color: #1D1F25;
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            text-align: center;
-        }
-        .softwarebox{
-              background-color: white; 
-              box-sizing:border-box;
-              border-top-left-radius: 5px;
-              border-bottom-left-radius: 5px;
-              width:850px;
-              background: linear-gradient( to right ,#1D1F25,#2B2C36);
-              height:200px;
-              margin-left: -25px;
-              margin-top: 20px;
-              }
-         .software_image{
-                width: 150px;
-                height: 100px;
-                margin-left: 20px;
-                margin-top: 0px;
-                float: left;
-              }
-        .software-name{
+{% extends 'base.html' %}
 
-            color: #14FF2D;
-            padding: 10px 0 0 20px;
-    
-        }      
-        .form-label{
-            padding: 0 0 0 20px;
-            
-        }
-      
-       button{
-           display:block;
-           background-color: #1D1F25;
-           border: 1px solid #14FF2D ;
-           cursor: pointer;
-           padding: 5px 10px 6px 7px;
-           color:#cccccc;
-           border-radius: 3px;
-       }
-       button img{
-           border: 0;
-           padding:0;
-           width: 16px;
-           height:16px;
-           
-       }
-       button.subm:hover{
-           background-color:#14FF2D;
-           border:1px solid #1D1F25;
-           color:#1D1F25;
-           border-radius: 3px;
-       }
-       fieldset legend{
-           font-weight:bold;
-           font-size:20px;
-           color:black;
-       }
-       ul{
-           list-style-type:none;
-           text-align:left;
-       }
-       div.box1{
-           float:left;
-           text-align: center;
-           background-color:#1D1F25;
-           position: absolute;
-           left: 100px;
-           top: 100px;  
-           height: 400px;
-           width:200px;
-           border-radius:10px 0 10px;
+{% block style %}
+<style>
+    button{
+        display:block;
+        background-color: #1D1F25;
+        border: 1px solid #14FF2D ;
+        cursor: pointer;
+        padding: 5px 10px 6px 7px;
+        color:#cccccc;
+        border-radius: 3px;
+    }
+    button img{
+        border: 0;
+        padding:0;
+        width: 16px;
+        height:16px; 
+    }
+    button.subm:hover{
+        background-color:#14FF2D;
+        border:1px solid #1D1F25;
+        color:#1D1F25;
+        border-radius: 3px;
+    }
+    ul{
+       list-style-type:none;
+       text-align:left;
+    }
+    div.box1{
+       float:left;
+       text-align: center;
+       background-color:#1D1F25;
+       position: absolute;
+       left: 100px;
+       top: 100px;  
+       height: 400px;
+       width:200px;
+       border-radius:10px 0 10px;
+    }
+    div.box2{
+       float:left;
+       text-align: center;
+       background-color:#1D1F25;
+       position: absolute;
+       left: 350px;
+       top: 100px;  
+       height: 320px;
+       width:200px;
+       border-radius:10px 0 10px;
+    }
+    div.box3{
+       float:left;
+       text-align: center;
+       background-color:#1D1F25;
+       position: absolute;
+       left: 600px;
+       top: 100px;  
+       height: 320px;
+       width:200px;
+       border-radius:10px 0 10px;
+    }
+    div.box4{
+       float:left;
+       text-align: center;
+       background-color:#1D1F25;
+       position: absolute;
+       left: 850px;
+       top: 100px;  
+       height: 320px;
+       width:250px;
+       border-radius:10px 0 10px;
+    }
+    li.page2{
+       line-height:40px;
+    }
+</style>
+{% endblock %}
 
-       }
-       div.box2{
-           float:left;
-           text-align: center;
-           background-color:#1D1F25;
-           position: absolute;
-           left: 350px;
-           top: 100px;  
-           height: 320px;
-           width:200px;
-           border-radius:10px 0 10px;
-       }
-       div.box3{
-           float:left;
-           text-align: center;
-           background-color:#1D1F25;
-           position: absolute;
-           left: 600px;
-           top: 100px;  
-           height: 320px;
-           width:200px;
-           border-radius:10px 0 10px;
-       }
-       div.box4{
-           float:left;
-           text-align: center;
-           background-color:#1D1F25;
-           position: absolute;
-           left: 850px;
-           top: 100px;  
-           height: 320px;
-           width:250px;
-           border-radius:10px 0 10px;
-       }
-       li.page2{
-           line-height:40px;
-       }
-       
-
-
-    </style>
-</head>
-
-<body>
-    <nav>
-        <!--네비게이션바 / 링크는 장고 제작 후에 설정-->
-        <ul class="nav-container">
-            <li class="nav-item"><a href="#" id="LOGO">웹404</a></li>
-            <li class="nav-item"><a href="#">노트북 선택</a></li>
-            <li class="nav-item"><a href="#">노트북 둘러보기</a></li>
-        </ul>
-    </nav>
-
-    <article>
-        <form>
-            <div class="box1">
-                <h2 style="color:#14FF2D;">제조사</h2>
-                <ul>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="LG전자">LG전자</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="삼성전자">삼성전자</label>
-                    </li>
-                    <li class="page2">
-                            <label><input type="checkbox" name="pre" value="ASUS">ASUS</label>
-                    </li>
-                    <li class="page2">
-                            <label><input type="checkbox" name="pre" value="레노버">레노버</label>
-                    </li>        
-                    <li class="page2">
-                            <label><input type="checkbox" name="pre" value="HP">HP</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="APPLE">APPLE</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="한성컴퓨터">한성컴퓨터</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="box2">
-                <h2 style="color:#14FF2D;">무게</h2>
-                <ul>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="_1">1kg 미만</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="_2">1.0~1.4kg</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="_3">1.4~1.7kg</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="_4">1.7~2.0kg</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="_5">2.0~2.3kg</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="box3">
-                <h2 style="color:#14FF2D;">화면크기</h2>
-                <ul>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="__1">17인치대</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="__2">16인치대</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="__3">15인치대</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="__4">14인치대</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="__5">13인치대</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="box4">
-                <h2 style="color:#14FF2D;">운영체제</h2>
-                <ul>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="프리도스">미포함(프리도스)</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="윈도우10">윈도우10</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="윈도우10 프로">윈도우10프로</label>
-                    </li>
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="macOS">macOS</label>
-                    </li class="page2">
-                    <li class="page2">
-                        <label><input type="checkbox" name="pre" value="리눅스">리눅스</label>
-                    </li>
-                </ul>
-            </div>
-            <button type="submit" class="subm" style="float: right">
-                <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
-            </button>
-            <button type="reset" class="subm" style="float: right">
-                <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
-            </button>
-        </form>
-    </article>
-
-
-    <div class="side">
-        <ul class="side-container">
-            <li><a href="#">소프트웨어 선택</a></li>
-            <p>▼</p>                      
-            <li><a href="#">소프트웨어 세부설정</a></li>
-            <p>▼</p>                      
-            <li><a href="#">추가기능 (1)</a></li>
-            <p>▼</p>                      
-            <li><a href="#">추가기능 (2)</a></li>
-            <p>▼</p>                      
-            <li><a href="#">노트북 선택</a></li>
-        </ul>
-    </div>
-
-    <div class="next">
-        <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
-    </div>
-   
-
-</body>
-</html>
+{% block body %}
+    <form>
+        <div class="box1">
+            <h2 style="color:#14FF2D;">제조사</h2>
+            <ul>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="LG전자">LG전자</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="삼성전자">삼성전자</label>
+                </li>
+                <li class="page2">
+                        <label><input type="checkbox" name="pre" value="ASUS">ASUS</label>
+                </li>
+                <li class="page2">
+                        <label><input type="checkbox" name="pre" value="레노버">레노버</label>
+                </li>        
+                <li class="page2">
+                        <label><input type="checkbox" name="pre" value="HP">HP</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="APPLE">APPLE</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="한성컴퓨터">한성컴퓨터</label>
+                </li>
+            </ul>
+        </div>
+        <div class="box2">
+            <h2 style="color:#14FF2D;">무게</h2>
+            <ul>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="_1">1kg 미만</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="_2">1.0~1.4kg</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="_3">1.4~1.7kg</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="_4">1.7~2.0kg</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="_5">2.0~2.3kg</label>
+                </li>
+            </ul>
+        </div>
+        <div class="box3">
+            <h2 style="color:#14FF2D;">화면크기</h2>
+            <ul>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="__1">17인치대</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="__2">16인치대</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="__3">15인치대</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="__4">14인치대</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="__5">13인치대</label>
+                </li>
+            </ul>
+        </div>
+        <div class="box4">
+            <h2 style="color:#14FF2D;">운영체제</h2>
+            <ul>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="프리도스">미포함(프리도스)</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="윈도우10">윈도우10</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="윈도우10 프로">윈도우10프로</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="macOS">macOS</label>
+                </li class="page2">
+                <li class="page2">
+                    <label><input type="checkbox" name="pre" value="리눅스">리눅스</label>
+                </li>
+            </ul>
+        </div>
+        <button type="submit" class="subm" style="float: right">
+            <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
+        </button>
+        <button type="reset" class="subm" style="float: right">
+            <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
+        </button>
+        <div class="next">
+            <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
+        </div>
+    </form>
+{% endblock %}
