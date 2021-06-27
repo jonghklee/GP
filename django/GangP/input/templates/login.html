@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-       @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-        body{
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+     
+      body{
             margin: 0;
             background-color: #2B2C36;
             color: #14FF2D;
             color: white;
             font-size: 20px;
+            
         }
         .logo{
             color:#14FF2D;
-            font-size: 20px;
-            font-family:'sans-serif';
+            font-size: 40px;
+            font-family: 'Noto Sans JP', sans-serif;
            margin-top:50px;
         }
         fieldset{
             position:relative;
+            
         }
         .login_block{
             position:absolute; 
@@ -29,6 +32,33 @@
             left:50%;
             margin-top:-120px;
             margin-left: -125px;
+            
+        }
+        #button{
+           width: 200px;
+           position:absolute;
+           background-color:#14FF2D ;
+           left: 50%;
+           margin-left:-100px;
+           border-radius: 3PX;
+        }
+        #button:hover{
+            
+            border:1px solid white;
+            border-radius: 3PX;
+            background-color: #2B2C36 ;
+            color: white;
+            }
+        .memo{
+            border-radius: 2px;
+            margin-left:20px;
+        }
+        .new{
+            text-align: center; 
+            font-size: 15px;
+            color: black;
+            border: 2px ;
+            
         }
     </style>
     </head>
@@ -36,16 +66,21 @@
        <div class="logo" style="text-align: center;">
            WEB 404
        </div>
-    
-       <fieldset style="width: 250px;" class="login_block">
-        <legend>login</legend>
+       <div class="login_block">
+       <fieldset style="width: 250px; border:1px solid #14FF2D; border-radius: 2px;" >
+        <legend style="text-align: center;">login</legend>
         <form method='post' action='login_ck.php' >
-            <p>id: <input name='id' type='text' ></p>
-            <p>pw: <input name='pw' type='password'></p>
-            <input type='submit' value='login'>
-            <a herf='#'>회원가입</a>
+            <p class="memo">id<br/><input name='id' type='text' placeholder="아이디를 입력하시오."></p>
+            <p class="memo">pw<br/> <input name='pw' type='password'placeholder="비밀번호를 입력하시오."></p>
         </form>
+        
     </fieldset>
+    <br/>
+    <input type='submit' value='login' id="button" >
+    <br/>
+        <a herf='#' id="button" class="new" >회원가입</a>
+    </div>
+   
     
     </body>
     </html>
