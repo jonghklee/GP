@@ -3,13 +3,13 @@ from .models import SoftwareSpec, ChoosenSpec
 # Create your views here.
 #종혁
 
-
 def page0(request):
     return render(request, 'page0.html')
 
 def page1(request):
     softs = SoftwareSpec.objects.all()
     choosen = ChoosenSpec.objects.all()
+
     softnamelist = []
     softlist = []
     for soft in softs:
@@ -18,8 +18,8 @@ def page1(request):
         else:
             softnamelist.append(soft.name)
             softlist.append(soft)
-    return render(request, 'page1.html', {'softs':softlist, 'shoosen':choosen})
 
+    return render(request, 'page1.html', {'softs':softlist, 'choosen':choosen})
 
 def getpage1(request):
     a = request.POST('???')
