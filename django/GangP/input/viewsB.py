@@ -5,7 +5,7 @@ from .models import SoftwareSpec, ChoosenSpec, othermatters
 
 #1. 페이지 생성 전
 
-def page2(request):
+def page1_5(request):
     softnamelist = request.POST['???']
     softSpec = SoftwareSpec.objects.all()
     softlist = []

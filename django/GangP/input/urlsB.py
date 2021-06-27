@@ -1,5 +1,6 @@
 from django.urls import path
-from input import views as inputViews
+from input import viewsB
 
 urlpatterns = [
+    path('page1_5', viewsB.page1_5, 'page1_5'),
 ]
