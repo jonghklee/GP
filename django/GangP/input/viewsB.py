@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import SoftwareSpec, ChoosenSpec, othermatters
 # Create your views here.
 #소현
 
@@ -7,21 +7,12 @@ from django.shortcuts import render
 
 def page2(request):
     softnamelist = request.POST['???']
-    
-    return render()
-#2. 페이지 생성 후
-
-
-def getpage1(request):
-    
-    software.name=request.POST['name']
-    software.version=request.POST['version']
-
-   softs = SoftwareSpec.objects.all()
-    choosen = ChoosenSpec.objects.all()
-    softnamelist = []
+    softSpec = SoftwareSpec.objects.all()
     softlist = []
-    for soft in softlist:
-        if soft.name in softnamelist:
 
- return render(request,'page')       
+    for soft in softSpec:
+        if soft.name in softnamelist:
+            softlist.append(soft)
+
+    return render(request, 'page2.html' , {'softs':softlist})
+#2. 페이지 생성 후
