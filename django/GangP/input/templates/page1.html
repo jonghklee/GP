@@ -1,33 +1,34 @@
 {% extends 'base.html' %}
+
+{% block style %}
 <style>
     input[type="checkbox"]{
         display:none;
     }
 </style>
-
-
-
-{% block style %}
 {% endblock %}
 
 {% block body %}
-            <h1>게임</h1>
-            <input type="checkbox"><img src="https://t1.kakaocdn.net/gamepub/daumgame/common/meta_tag_pubg.png" alt="배틀그라운드" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://coredot-ipynb-space.s3.ap-northeast-2.amazonaws.com/1ff23f39-3d20-4c20-8743-954698c70907/20200812/10f94e3e-b1d9-4986-b63b-8ee5e2ba6e78.png" alt="리그오브레전드" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://image.ytn.co.kr/general/jpg/2021/0311/202103110915014429_d.jpg" alt="메이플스토리" width="250" height="150"></input>
-            <input type="checkbox"><h2>공학 프로그램</h2></input>
-            <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://i.pinimg.com/originals/89/1b/2b/891b2b080420bf0c5fc6ee5b59ba3b28.png" alt="ProE" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
-            <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
-            <h3>그래픽</h3>
+            <form action=""></form>
+                <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
+
+                <h1>게임</h1>
+                <input type="checkbox"><img src="https://t1.kakaocdn.net/gamepub/daumgame/common/meta_tag_pubg.png" alt="배틀그라운드" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://coredot-ipynb-space.s3.ap-northeast-2.amazonaws.com/1ff23f39-3d20-4c20-8743-954698c70907/20200812/10f94e3e-b1d9-4986-b63b-8ee5e2ba6e78.png" alt="리그오브레전드" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMTJfMTU2/MDAxNTE4NDIxOTU3NjU2.MywAeiJbTJ1VzJw8k3Kl84iujNws5j9p_GEMfgIJI84g.ZPKcemqOZZUn8FKGF94K8lxKRKMpdaaJdpgqVHiD0R4g.JPEG.dancekitty/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98_%EB%A1%9C%EA%B3%A0.jpg?type=w800" alt="오버워치" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://image.ytn.co.kr/general/jpg/2021/0311/202103110915014429_d.jpg" alt="메이플스토리" width="250" height="150"></input>
+                <input type="checkbox"><h2>공학 프로그램</h2></input>
+                <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://i.pinimg.com/originals/89/1b/2b/891b2b080420bf0c5fc6ee5b59ba3b28.png" alt="ProE" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
+                <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
+                <h3>그래픽</h3>
 
 {% endblock %}
