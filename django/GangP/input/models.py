@@ -9,6 +9,7 @@ from django.db import models
 # 소프트웨어별 사양
 class SoftwareSpec(models.Model):
     name = models.CharField(max_length=100) # 중복 가능 (version으로 나누면 됨.)
+    img = models.ImageField(upload_to = "input/", blank = True, null = True)
     version = models.IntegerField(default=0) # 하옵 중옵 상옵 등을 나타내는 인덱스로 사용
     # 0: 옵션 구별 없음 / 자연수: 자연수 개수만큼 옵션 존재
     cpu = models.CharField(max_length=100)

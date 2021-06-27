@@ -3,13 +3,22 @@
 {% block style %}
 <style>
     input[type="checkbox"]{
-        display:none;
+    }display:none;
     }
 </style>
 {% endblock %}
 
 {% block body %}
-            <form action=""></form>
+
+{%for soft in softs%}
+    <input type="checkbox" name="{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onclick="rule_chk.click()"><img src="{{soft.img.url}}" width="250" height="150" /></label>
+{%endfor%}
+
+
+
+            <form action="">
+
+            </form>
                 <input type="checkbox"><img src="https://www.amd.com/system/files/2018-12/173261-autodesk-autocad-logo-1260x709.png" alt="CAD" width="250" height="150"></input>
 
                 <h1>게임</h1>

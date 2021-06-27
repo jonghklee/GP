@@ -8,9 +8,13 @@ def page0(request):
     return render(request, 'page0.html')
 
 def page1(request):
-    soft = SoftwareSpec.objects.all()
+    softs = SoftwareSpec.objects.all()
     choosen = ChoosenSpec.objects.all()
-    return render(request, 'page1.html', {'soft':soft, 'shoosen':choosen})
+    return render(request, 'page1.html', {'softs':softs, 'shoosen':choosen})
+
+
+def getpage1(request):
+    a = request.POST('???')
 
 
 
