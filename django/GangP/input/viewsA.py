@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import othermatters
 # Create your views here.
 #현진
 
