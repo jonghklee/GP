@@ -15,7 +15,6 @@ class SoftwareSpec(models.Model):
     vga = models.CharField(max_length=100)
     ram = models.IntegerField()
     hdd = models.IntegerField()
-    image = models.ImageField(upload_to = "softwarespec/", blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -42,21 +41,28 @@ class othermatters(models.Model):
         ('레노버','레노버'),
         ('HP','HP'),
         ('APPLE','APPLE'),
-        ('한성','한성')
+        ('한성','한성'),
     )
     laptop_weight_Choices = (
-        ('pretty_light','1kg 미만')
-        ('light','1.0~1.4kg')
-        ('LH', '1.4~1.7kg')
-        ('heavy','1.7~2.0kg')
-        ('pretty_heavy','2.0~2.3kg')
+        ('pretty_light','1kg 미만'),
+        ('light','1.0~1.4kg'),
+        ('LH', '1.4~1.7kg'),
+        ('heavy','1.7~2.0kg'),
+        ('pretty_heavy','2.0~2.3kg'),
     )
     screen_size_Choice=(
-        ('pretty_L','17인치대')
-        ('L','16인치대')
-        ('LS','15인치대')
-        ('S','14인치대')
-        ('pretty_S','13인치대')
+        ('pretty_L','17인치대'),
+        ('L','16인치대'),
+        ('LS','15인치대'),
+        ('S','14인치대'),
+        ('pretty_S','13인치대'),
+    )
+    operating_systems_Choice=(
+        ('freedos','프리도스'),
+        ('window10','윈도우10'),
+        ('window10pro','윈도우10프로'),
+        ('macOS','macOS'),
+        ('linux','리눅스'),
     )
 
 
