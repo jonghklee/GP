@@ -10,7 +10,15 @@ def page0(request):
 def page1(request):
     softs = SoftwareSpec.objects.all()
     choosen = ChoosenSpec.objects.all()
-    return render(request, 'page1.html', {'softs':softs, 'shoosen':choosen})
+    softnamelist = []
+    softlist = []
+    for soft in softs:
+        if soft.name in softnamelist:
+            pass
+        else:
+            softnamelist.append(soft.name)
+            softlist.append(soft)
+    return render(request, 'page1.html', {'softs':softlist, 'shoosen':choosen})
 
 
 def getpage1(request):

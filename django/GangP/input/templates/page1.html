@@ -11,6 +11,7 @@
 {% block body %}
 
 {%for soft in softs%}
+<!--나중에 꼭 수정하기!!!-->
     <input type="checkbox" name="{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onclick="rule_chk.click()"><img src="{{soft.img.url}}" width="250" height="150" /></label>
 {%endfor%}
 
