@@ -82,12 +82,11 @@
     <nav>
         <!--네비게이션바 / 링크는 장고 제작 후에 설정-->
         <ul class="nav-container">
-            <li class="nav-item"><a href="#" id="LOGO">웹404</a></li>
-            <li class="nav-item"><a href="#">노트북 선택</a></li>
+            <li class="nav-item"><a href="{% url 'page0' %}" id="LOGO">웹404</a></li>
+            <li class="nav-item"><a href="{% url 'page0' %}">노트북 선택</a></li>
             <li class="nav-item"><a href="#">노트북 둘러보기</a></li>
         </ul>
     </nav>
-
     <article>
         {% block body %}
         {% endblock %}
@@ -108,9 +107,7 @@
         </ul>
     </div>
 
-    <div class="next">
-        <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
-    </div>
+
 
 
 </body>

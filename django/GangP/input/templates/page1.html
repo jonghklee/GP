@@ -1,5 +1,3 @@
-
-
 {% extends 'base.html' %}
 
 {% block style %}
@@ -20,20 +18,46 @@ function isboxchecked(softname){
     input[type="checkbox"]{
     display:none;
     }
-    #hihi_label {
-        box-shadow: 0 0 50px #14FF2D;
+
+    #none2_label{
+        box-shadow: 0 0 0 #000000;
     }
+
+    #none1_label{
+        box-shadow: 20px 15px 20px #14FF2D44;
+    }
+
 </style>
 {% endblock %}
 
 {% block body %}
 
-<form action="">
+<form action="{% url 'page1_5' %}" method="POST">
+    {%csrf_token%}
     {%for soft in softs%}
     <!--나중에 꼭 수정하기!!!-->
     <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
     {%endfor%}
 
+    <input type="submit">
+    <!--
+    <div class="next">
+        <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
+    </div>
+    -->
 </form>
+
+    <hr>
+
+    <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="checkbox" name="name_none1" id="none1"/><label for="none1" ><img id="none1_label" src="./resource/battleground.png" width="250" height="150" /></label>
+
+    <hr>
 
 {% endblock %}

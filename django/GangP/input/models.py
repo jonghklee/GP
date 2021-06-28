@@ -20,11 +20,7 @@ class SoftwareSpec(models.Model):
     def __str__(self):
         return self.name
 
-    def goodfunction(self):
-        print('I am good function')
-    #사진 추가 필요 - media 다시 듣고 구현하기
-    #사진 추가하기 전까지는 일단 templates/resource 폴더 사용하기
-
+#title 추가시 띄어쓰기 쓰지 말기
 
 # 선택한 사양
 class ChoosenSpec(models.Model):
