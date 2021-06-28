@@ -32,7 +32,8 @@ function isboxchecked(softname){
 
 {% block body %}
 
-<form action="">
+<form action="{% url 'page1_5' %}" method="POST">
+    {%csrf_token%}
     {%for soft in softs%}
     <!--나중에 꼭 수정하기!!!-->
     <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
