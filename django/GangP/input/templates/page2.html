@@ -79,6 +79,8 @@
 
 {% block body %}
     <form action="{% url 'create' %}" method="post">
+        
+        {% csrf_token %}
         <div class="box1">
             <h2 style="color:#14FF2D;">제조사</h2>
             <ul>
@@ -109,19 +111,19 @@
             <h2 style="color:#14FF2D;">무게</h2>
             <ul>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="_1">1kg 미만</label>
+                    <label><input type="checkbox" name="무게" value="1kg 미만">1kg 미만</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="_2">1.0~1.4kg</label>
+                    <label><input type="checkbox" name="무게" value="1.0~1.4kg">1.0~1.4kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="_3">1.4~1.7kg</label>
+                    <label><input type="checkbox" name="무게" value="1.4~1.7kg">1.4~1.7kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="_4">1.7~2.0kg</label>
+                    <label><input type="checkbox" name="무게" value="1.7~2.0kg">1.7~2.0kg</label>
                 </li>
-                <li class="page2"게
-                    <label><input type="checkbox" name="무게" value="_5">2.0~2.3kg</label>
+                <li class="page2">
+                    <label><input type="checkbox" name="무게" value="2.0~2.3kg">2.0~2.3kg</label>
                 </li>
             </ul>
         </div>
@@ -129,19 +131,19 @@
             <h2 style="color:#14FF2D;">화면크기</h2>
             <ul>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="__1">17인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="17인치대">17인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="__2">16인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="16인치대">16인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="__3">15인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="15인치대">15인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="__4">14인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="14인치대">14인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="__5">13인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="13인치대">13인치대</label>
                 </li>
             </ul>
         </div>
@@ -172,45 +174,10 @@
             <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
         </button>
         <div class="next">
-            <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
+            <a href="{% url 'create' %}" style="color:#1D1F25"><strong>다음</strong></a>
+            
         </div>
     </form>
-
-
-
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<hr>
-
-{{blogs}}
-
-
-
-<br><br>
-<hr>
 
 {% endblock %}
 

@@ -34,10 +34,10 @@ class ChoosenSpec(models.Model):
 
 class othermatters(models.Model): 
     manufacturer = models.CharField(max_length = 100, default=None)
-    laptopweight1 = models.FloatField(default=None)
-    laptopweight2 = models.FloatField(default=None)
+    laptopweight1 = models.CharField(max_length = 100,default=None)
     screensize = models.CharField(max_length = 100, default=None)
     operating = models.CharField(max_length= 100, default=None)
+    null = True
 
 
 
