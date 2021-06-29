@@ -8,6 +8,7 @@ def page2(request):
 
 def create(request):
     matter1 = othermatters()
+
     matter1.manufacturer = request.POST['제조사']
     matter1.laptopweight1 = request.POST['무게']
     matter1.screensize = request.POST['화면크기']

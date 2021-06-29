@@ -37,8 +37,6 @@ class othermatters(models.Model):
     laptopweight1 = models.CharField(max_length = 100,default=None)
     screensize = models.CharField(max_length = 100, default=None)
     operating = models.CharField(max_length= 100, default=None)
-    null = True
-
 
 
 
