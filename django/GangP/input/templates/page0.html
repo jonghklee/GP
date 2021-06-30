@@ -34,12 +34,21 @@
 
 <body>
     <article>
-        <div id="LOGO" style="font-size:250px">웹404</div>
+        <div id="LOGO" style="font-size:180px">TITLE</div>
+        <br>
+        <br>
         <h2>sorry the page in not found <br>
             but we found your laptop</h2>
-        <a href="{% url 'page1' %}">page1</a>
-        <a href="{% url 'page1_5' %}">page1.5</a>
-        <a href="{% url 'page2' %}">page2</a>
+        <a href="{% url 'page1' %}">page1</a><br>
+        <a href="{% url 'page1_5' %}">page1.5</a><br>
+        <a href="{% url 'page2' %}">page2</a><br>
+        <a href="{% url 'login' %}">login</a><br>
+        <a href="{% url 'logout' %}">logout</a><br>
+        <a href="{% url 'signup' %}">signup</a><br>
+
+        {% if user.is_authenticated %}
+        {{user.username}}
+        {% endif %}
     </article>
 </body>
 </html>
