@@ -69,11 +69,17 @@
        <div class="login_block">
        <fieldset style="width: 250px; border:1px solid #14FF2D; border-radius: 2px;" >
         <legend style="text-align: center;">login</legend>
+        <!--
         <form method='post' action='login_ck.php' >
             <p class="memo">id<br/><input name='id' type='text' placeholder="아이디를 입력하시오."></p>
             <p class="memo">pw<br/> <input name='pw' type='password'placeholder="비밀번호를 입력하시오."></p>
         </form>
-        
+        -->
+        <form action="{% url 'login' %}" method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type"submit">submit</button>
+        </form>
     </fieldset>
     <br/>
     <input type='submit' value='login' id="button" >

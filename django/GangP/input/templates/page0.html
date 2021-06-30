@@ -34,12 +34,28 @@
 
 <body>
     <article>
+<<<<<<< HEAD
         <div id="LOGO" style="font-size:100px">CUTONB</div>
         <h2>당신에게 가장 맞는 <br>
             노트북을 찾아드립니다</h2>
         <a href="{% url 'page1' %}">page1</a>
         <a href="{% url 'page1_5' %}">page1.5</a>
         <a href="{% url 'page2' %}">page2</a>
+=======
+        <div id="LOGO" style="font-size:250px">웹404</div>
+        <h2>Sorry the page in not found <br>
+            but we found your laptop</h2>
+        <a href="{% url 'page1' %}">page1</a><br>
+        <a href="{% url 'page1_5' %}">page1.5</a><br>
+        <a href="{% url 'page2' %}">page2</a><br>
+        <a href="{% url 'login' %}">login</a><br>
+        <a href="{% url 'logout' %}">logout</a><br>
+        <a href="{% url 'signup' %}">signup</a><br>
+
+        {% if user.is_authenticated %}
+        {{user.username}}
+        {% endif %}
+>>>>>>> e17285d2e685aeec12a1352648a619cb4a6dbf21
     </article>
 </body>
 </html>

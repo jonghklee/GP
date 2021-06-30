@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'input',
     'output',
     'crawler',
+    'account',
 ]
 
 MIDDLEWARE = [
