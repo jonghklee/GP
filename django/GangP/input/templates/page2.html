@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block style %}
+
 <style>
     button{
         display:block;
@@ -24,8 +25,8 @@
         border-radius: 3px;
     }
     ul{
-       list-style-type:none;
        text-align:left;
+       list-style:none;
     }
     div.box1{
        float:left;
@@ -34,7 +35,7 @@
        position: absolute;
        left: 100px;
        top: 100px;  
-       height: 400px;
+       height: 450px;
        width:200px;
        border-radius:10px 0 10px;
     }
@@ -45,7 +46,7 @@
        position: absolute;
        left: 350px;
        top: 100px;  
-       height: 320px;
+       height: 370px;
        width:200px;
        border-radius:10px 0 10px;
     }
@@ -56,7 +57,7 @@
        position: absolute;
        left: 600px;
        top: 100px;  
-       height: 320px;
+       height: 370px;
        width:200px;
        border-radius:10px 0 10px;
     }
@@ -67,7 +68,7 @@
        position: absolute;
        left: 850px;
        top: 100px;  
-       height: 320px;
+       height: 370px;
        width:250px;
        border-radius:10px 0 10px;
     }
@@ -79,91 +80,219 @@
 
 {% block body %}
     <form action="{% url 'create' %}" method="post">
-        
         {% csrf_token %}
+        
         <div class="box1">
+            <script>
+                function checkSelectAll1()  {
+              // 전체 체크박스
+              const checkboxes 
+                = document.querySelectorAll('input[name="제조사"]');
+              // 선택된 체크박스
+              const checked 
+                = document.querySelectorAll('input[name="제조사"]:checked');
+              // select all 체크박스
+              const selectAll1 
+                = document.querySelector('input[name="selectall1"]');
+              
+              if(checkboxes.length === checked.length)  {
+                selectAll1.checked = true;
+              }else {
+                selectAll1.checked = false;
+              }
+            
+            }
+            
+            function selectAll1(selectAll1)  {
+              const checkboxes 
+                 = document.getElementsByName('제조사');
+              
+              checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll1.checked
+              })
+            }
+            </script>
             <h2 style="color:#14FF2D;">제조사</h2>
             <ul>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="LG전자">LG전자</label>
+                    <label><input type='checkbox' name='selectall1' value='selectall1' onclick='selectAll1(this)'>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="삼성전자">삼성전자</label>
+                    <label><input type="checkbox" name="제조사" value="LG전자" onclick='checkSelectAll1()'>LG전자</label>
                 </li>
                 <li class="page2">
-                        <label><input type="checkbox" name="제조사" value="ASUS">ASUS</label>
+                    <label><input type="checkbox" name="제조사" value="삼성전자"  onclick='checkSelectAll1()'>삼성전자</label>
                 </li>
                 <li class="page2">
-                        <label><input type="checkbox" name="제조사" value="레노버">레노버</label>
+                        <label><input type="checkbox" name="제조사" value="ASUS"onclick='checkSelectAll1()'>ASUS</label>
+                </li>
+                <li class="page2">
+                        <label><input type="checkbox" name="제조사" value="레노버"  onclick='checkSelectAll1()'>레노버</label>
                 </li>        
                 <li class="page2">
-                        <label><input type="checkbox" name="제조사" value="HP">HP</label>
+                        <label><input type="checkbox" name="제조사" value="HP" onclick='checkSelectAll1()'>HP</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="APPLE">APPLE</label>
+                    <label><input type="checkbox" name="제조사" value="APPLE"  onclick='checkSelectAll1()'>APPLE</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="한성컴퓨터">한성컴퓨터</label>
+                    <label><input type="checkbox" name="제조사" value="한성컴퓨터" onclick='checkSelectAll1()'>한성컴퓨터</label>
                 </li>
             </ul>
         </div>
         <div class="box2">
+            <script>
+                function checkSelectAll2()  {
+              // 전체 체크박스
+              const checkboxes 
+                = document.querySelectorAll('input[name="무게"]');
+              // 선택된 체크박스
+              const checked게
+                = document.querySelectorAll('input[name="무게"]:checked');
+              // select all 체크박스
+              const selectAll 
+                = document.querySelector('input[name="selectall2"]');
+              
+              if(checkboxes.length === checked.length)  {
+                selectAll2.checked = true;
+              }else {
+                selectAll2.checked = false;
+              }
+            
+            }
+            
+            function selectAll2(selectAll2)  {
+              const checkboxes 
+                 = document.getElementsByName('무게');
+              
+              checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll2.checked
+              })
+            }
+            </script>
             <h2 style="color:#14FF2D;">무게</h2>
             <ul>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1kg 미만">1kg 미만</label>
+                    <label><input type='checkbox' name='selectall2' value='selectall2' onclick='selectAll2(this)'>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1.0~1.4kg">1.0~1.4kg</label>
+                    <label><input type="checkbox" name="무게" value="1kg 미만" onclick='checkSelectAll2()'>1kg 미만</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1.4~1.7kg">1.4~1.7kg</label>
+                    <label><input type="checkbox" name="무게" value="1.0~1.4kg" onclick='checkSelectAll2()'>1.0~1.4kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1.7~2.0kg">1.7~2.0kg</label>
+                    <label><input type="checkbox" name="무게" value="1.4~1.7kg" onclick='checkSelectAll2()'>1.4~1.7kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="2.0~2.3kg">2.0~2.3kg</label>
+                    <label><input type="checkbox" name="무게" value="1.7~2.0kg" onclick='checkSelectAll2()'>1.7~2.0kg</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="무게" value="2.0~2.3kg" onclick='checkSelectAll2()'>2.0~2.3kg</label>
                 </li>
             </ul>
         </div>
         <div class="box3">
+            <script>
+                function checkSelectAll3()  {
+              // 전체 체크박스
+              const checkboxes 
+                = document.querySelectorAll('input[name="화면크기"]');
+              // 선택된 체크박스
+              const checked게
+                = document.querySelectorAll('input[name="화면크기"]:checked');
+              // select all 체크박스
+              const selectAll 
+                = document.querySelector('input[name="selectall3"]');
+              
+              if(checkboxes.length === checked.length)  {
+                selectAll3.checked = true;
+              }else {
+                selectAll3.checked = false;
+              }
+            
+            }
+            
+            function selectAll3(selectAll3)  {
+              const checkboxes 
+                 = document.getElementsByName('화면크기');
+              
+              checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll3.checked
+              })
+            }
+            </script>
             <h2 style="color:#14FF2D;">화면크기</h2>
             <ul>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="17인치대">17인치대</label>
+                    <label><input type='checkbox' name='selectall3' value='selectall3' onclick='selectAll3(this)'>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="16인치대">16인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="17인치대" onclick='checkSelectAll3()'>17인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="15인치대">15인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="16인치대" onclick='checkSelectAll3()'>16인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="14인치대">14인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="15인치대" onclick='checkSelectAll3()'>15인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="13인치대">13인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="14인치대" onclick='checkSelectAll3()'>14인치대</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="화면크기" value="13인치대" onclick='checkSelectAll3()'>13인치대</label>
                 </li>
             </ul>
         </div>
         <div class="box4">
+            <script>
+                function checkSelectAll4()  {
+              // 전체 체크박스
+              const checkboxes 
+                = document.querySelectorAll('input[name="운영체제"]');
+              // 선택된 체크박스
+              const checked게
+                = document.querySelectorAll('input[name="운영체제"]:checked');
+              // select all 체크박스
+              const selectAll 
+                = document.querySelector('input[name="selectall4"]');
+              
+              if(checkboxes.length === checked.length)  {
+                selectAll4.checked = true;
+              }else {
+                selectAll4.checked = false;
+              }
+            
+            }
+            
+            function selectAll4(selectAll4)  {
+              const checkboxes 
+                 = document.getElementsByName('운영체제');
+              
+              checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll4.checked
+              })
+            }
+            </script>
             <h2 style="color:#14FF2D;">운영체제</h2>
             <ul>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="프리도스">미포함(프리도스)</label>
+                    <label><input type='checkbox' name='selectall4' value='selectall4' onclick='selectAll4(this)'>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="윈도우10">윈도우10</label>
+                    <label><input type="checkbox" name="운영체제" value="프리도스" onclick='checkSelectAll4()'>미포함(프리도스)</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="윈도우10 프로">윈도우10프로</label>
+                    <label><input type="checkbox" name="운영체제" value="윈도우10" onclick='checkSelectAll4()'>윈도우10</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="macOS">macOS</label>
+                    <label><input type="checkbox" name="운영체제" value="윈도우10 프로" onclick='checkSelectAll4()'>윈도우10프로</label>
+                </li>
+                <li class="page2">
+                    <label><input type="checkbox" name="운영체제" value="macOS" onclick='checkSelectAll4()'>macOS</label>
                 </li class="page2">
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="리눅스">리눅스</label>
+                    <label><input type="checkbox" name="운영체제" value="리눅스" onclick='checkSelectAll4()'>리눅스</label>
                 </li>
             </ul>
         </div>
