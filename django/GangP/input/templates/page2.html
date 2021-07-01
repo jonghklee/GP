@@ -3,28 +3,6 @@
 {% block style %}
 
 <style>
-    button{
-        display:block;
-        background-color: #1D1F25;
-        border: 1px solid #14FF2D ;
-        cursor: pointer;
-        padding: 5px 10px 6px 7px;
-        color:#cccccc;
-        border-radius: 3px;
-         
-    }
-    button img{
-        border: 0;
-        padding:0;
-        width: 16px;
-        height:16px; 
-    }
-    button.subm:hover{
-        background-color:#14FF2D;
-        border:1px solid #1D1F25;
-        color:#1D1F25;
-        border-radius: 3px;
-    }
     ul.page2_{
        text-align:left;
        list-style:none;
@@ -36,7 +14,7 @@
        position: absolute;
        left: 100px;
        top: 100px;  
-       height: 450px;
+       height: 490px;
        width:200px;
        border-radius:10px 0 10px;
     }
@@ -47,7 +25,7 @@
        position: absolute;
        left: 350px;
        top: 100px;  
-       height: 370px;
+       height: 410px;
        width:200px;
        border-radius:10px 0 10px;
     }
@@ -58,7 +36,7 @@
        position: absolute;
        left: 600px;
        top: 100px;  
-       height: 370px;
+       height: 410px;
        width:200px;
        border-radius:10px 0 10px;
     }
@@ -69,12 +47,12 @@
        position: absolute;
        left: 850px;
        top: 100px;  
-       height: 370px;
+       height: 410px;
        width:250px;
        border-radius:10px 0 10px;
     }
     li.page2{
-       line-height:40px;
+       line-height:45px;
     }
 </style>
 {% endblock %}
@@ -113,31 +91,31 @@
               })
             }
             </script>
-            <h2 style="color:#14FF2D;">제조사</h2>
+            <h2 style="color:#EB24AD; font-weight:lighter;">제조사</h2>
             <ul class="page2_">
                 <li class="page2">
-                    <label><input type='checkbox' name='selectall1' value='selectall1' onclick='selectAll1(this)'>전체선택</label>
+                    <label><input type='checkbox' name='selectall1' value='selectall1' onclick='selectAll1(this)' checked>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="LG전자" onclick='checkSelectAll1()'>LG전자</label>
+                    <label><input type="checkbox" name="제조사" value="LG전자" onclick='checkSelectAll1()' checked>LG전자</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="삼성전자"  onclick='checkSelectAll1()'>삼성전자</label>
+                    <label><input type="checkbox" name="제조사" value="삼성전자"  onclick='checkSelectAll1()' checked>삼성전자</label>
                 </li>
                 <li class="page2">
-                        <label><input type="checkbox" name="제조사" value="ASUS"onclick='checkSelectAll1()'>ASUS</label>
+                        <label><input type="checkbox" name="제조사" value="ASUS"onclick='checkSelectAll1()' checked>ASUS</label>
                 </li>
                 <li class="page2">
-                        <label><input type="checkbox" name="제조사" value="레노버"  onclick='checkSelectAll1()'>레노버</label>
+                        <label><input type="checkbox" name="제조사" value="레노버"  onclick='checkSelectAll1()'checked>레노버</label>
                 </li>        
                 <li class="page2">
-                        <label><input type="checkbox" name="제조사" value="HP" onclick='checkSelectAll1()'>HP</label>
+                        <label><input type="checkbox" name="제조사" value="HP" onclick='checkSelectAll1()'checked>HP</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="APPLE"  onclick='checkSelectAll1()'>APPLE</label>
+                    <label><input type="checkbox" name="제조사" value="APPLE"  onclick='checkSelectAll1()'checked>APPLE</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="제조사" value="한성컴퓨터" onclick='checkSelectAll1()'>한성컴퓨터</label>
+                    <label><input type="checkbox" name="제조사" value="한성컴퓨터" onclick='checkSelectAll1()'checked>한성컴퓨터</label>
                 </li>
             </ul>
         </div>
@@ -171,25 +149,25 @@
               })
             }
             </script>
-            <h2 style="color:#14FF2D;">무게</h2>
+            <h2 style="color:#EB24AD; font-weight:lighter;">무게</h2>
             <ul class="page2_">
                 <li class="page2">
-                    <label><input type='checkbox' name='selectall2' value='selectall2' onclick='selectAll2(this)'>전체선택</label>
+                    <label><input type='checkbox' name='selectall2' value='selectall2' onclick='selectAll2(this)' checked>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1kg 미만" onclick='checkSelectAll2()'>1kg 미만</label>
+                    <label><input type="checkbox" name="무게" value="1kg 미만" onclick='checkSelectAll2()' checked>1kg 미만</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1.0~1.4kg" onclick='checkSelectAll2()'>1.0~1.4kg</label>
+                    <label><input type="checkbox" name="무게" value="1.0~1.4kg" onclick='checkSelectAll2()' checked>1.0~1.4kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1.4~1.7kg" onclick='checkSelectAll2()'>1.4~1.7kg</label>
+                    <label><input type="checkbox" name="무게" value="1.4~1.7kg" onclick='checkSelectAll2()'checked>1.4~1.7kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="1.7~2.0kg" onclick='checkSelectAll2()'>1.7~2.0kg</label>
+                    <label><input type="checkbox" name="무게" value="1.7~2.0kg" onclick='checkSelectAll2()'checked>1.7~2.0kg</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="무게" value="2.0~2.3kg" onclick='checkSelectAll2()'>2.0~2.3kg</label>
+                    <label><input type="checkbox" name="무게" value="2.0~2.3kg" onclick='checkSelectAll2()'checked>2.0~2.3kg</label>
                 </li>
             </ul>
         </div>
@@ -223,25 +201,25 @@
               })
             }
             </script>
-            <h2 style="color:#14FF2D;">화면크기</h2>
+            <h2 style="color:#EB24AD; font-weight:lighter;">화면크기</h2>
             <ul class="page2_">
                 <li class="page2">
-                    <label><input type='checkbox' name='selectall3' value='selectall3' onclick='selectAll3(this)'>전체선택</label>
+                    <label><input type='checkbox' name='selectall3' value='selectall3' onclick='selectAll3(this)'checked>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="17인치대" onclick='checkSelectAll3()'>17인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="17인치대" onclick='checkSelectAll3()'checked>17인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="16인치대" onclick='checkSelectAll3()'>16인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="16인치대" onclick='checkSelectAll3()'checked>16인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="15인치대" onclick='checkSelectAll3()'>15인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="15인치대" onclick='checkSelectAll3()'checked>15인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="14인치대" onclick='checkSelectAll3()'>14인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="14인치대" onclick='checkSelectAll3()'checked>14인치대</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="화면크기" value="13인치대" onclick='checkSelectAll3()'>13인치대</label>
+                    <label><input type="checkbox" name="화면크기" value="13인치대" onclick='checkSelectAll3()'checked>13인치대</label>
                 </li>
             </ul>
         </div>
@@ -275,32 +253,32 @@
               })
             }
             </script>
-            <h2 style="color:#14FF2D;">운영체제</h2>
+            <h2 style="color:#EB24AD; font-weight:lighter;">운영체제</h2>
             <ul class="page2_">
                 <li class="page2">
-                    <label><input type='checkbox' name='selectall4' value='selectall4' onclick='selectAll4(this)'>전체선택</label>
+                    <label><input type='checkbox' name='selectall4' value='selectall4' onclick='selectAll4(this)'checked>전체선택</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="프리도스" onclick='checkSelectAll4()'>미포함(프리도스)</label>
+                    <label><input type="checkbox" name="운영체제" value="프리도스" onclick='checkSelectAll4()'checked>미포함(프리도스)</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="윈도우10" onclick='checkSelectAll4()'>윈도우10</label>
+                    <label><input type="checkbox" name="운영체제" value="윈도우10" onclick='checkSelectAll4()'checked>윈도우10</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="윈도우10 프로" onclick='checkSelectAll4()'>윈도우10프로</label>
+                    <label><input type="checkbox" name="운영체제" value="윈도우10 프로" onclick='checkSelectAll4()'checked>윈도우10프로</label>
                 </li>
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="macOS" onclick='checkSelectAll4()'>macOS</label>
+                    <label><input type="checkbox" name="운영체제" value="macOS" onclick='checkSelectAll4()'checked>macOS</label>
                 </li class="page2">
                 <li class="page2">
-                    <label><input type="checkbox" name="운영체제" value="리눅스" onclick='checkSelectAll4()'>리눅스</label>
+                    <label><input type="checkbox" name="운영체제" value="리눅스" onclick='checkSelectAll4()'checked>리눅스</label>
                 </li>
             </ul>
         </div>
-        <button type="submit" class="subm" style="float: right">
+        <button type="submit" class="subm" style="float: right; position:fixed; left: 1330px; bottom:50px; z-index:5">
           <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
         </button>
-        <button type="reset" class="subm" style="float: right">
+        <button type="reset" class="subm" style="float: right; position:fixed; left: 1420px; bottom:50px; z-index:5">
             <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
         </button>
     </form>
