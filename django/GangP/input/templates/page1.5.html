@@ -57,6 +57,10 @@
   .invisible {
     display: none;
   }
+  .slider-container {
+    text-align: center;
+    width: 80px;
+  }
 </style>
 <script>
   (function () {
@@ -64,8 +68,8 @@
 
     var init = function () {
       var slider2 = new rSlider({
-        target: "#sliderA",
-        values: [0, 1, 2, 3, 4, 5, 6, "7", 8],
+        target: "#slider3",
+        values: [],
         range: false,
         set: [5],
         tooltip: true,
@@ -78,11 +82,21 @@
   })();
 </script>
 {% endblock %} {% block body %}
-
-<input type="range" id="slider" />
-
 <form action="{% url 'page2' %}" method="POST">
-  {%csrf_token%} {% for soft in softs%} {% if soft.version != 0%}
+  {%csrf_token%} {% for soft in softs%} {% if soft.version == 3%}
+  <div class="softwarebox">
+    <p class="software-name"><strong> {{soft.name}} </strong></p>
+    <img class="software_image" src="{{soft.img.url}}" alt="image" />
+    <label for="" class="form-label">사양</label>
+    <!--label.for : id 값 가리킴-->
+    <div class="slider-container">
+      <input type="text" id="slider3" />
+    </div>
+    <div class="slider-container">
+      <input type="text" id="slider2" />
+    </div>
+  </div>
+  {% elif soft.version == 2 %}
   <div class="softwarebox">
     <p class="software-name"><strong> {{soft.name}} </strong></p>
     <img class="software_image" src="{{soft.img.url}}" alt="image" />
@@ -94,8 +108,11 @@
       max="{{soft.version}}"
       step="1"
     />
-
-    {% elif soft.version == 0 %}
+  </div>
+  {% else %}
+  <div class="softwarebox">
+    <p class="software-name"><strong> {{soft.name}} </strong></p>
+    <img class="software_image" src="{{soft.img.url}}" alt="image" />
     <label for="customrange" class="form-label">사양</label>
     <input
       type="range"
@@ -104,89 +121,13 @@
       max="{{soft.version}}"
       step="1"
     />
-
-    {% else %}
-    <input
-      type="range"
-      name="{{soft.name}}"
-      class="invisible"
-      min="0"
-      max="1"
-      step="1"
-      value="0"
-    />
-    {% endif %}
   </div>
-  {% endfor %}
+  {% endif %} {% endfor %}
   <input type="submit" />
 </form>
 
-<br /><br />
-<hr />
-<hr />
-<br /><br />
-
 <div class="slider-container">
   <input type="text" id="sliderA" class="slider" />
-</div>
-<div class="softwarebox">
-  <p class="software-name"><b>OverWatch </b></p>
-  <img class="software_image" src="resource/overwatch.jpg" alt="image" />
-  <!--조절바-->
-  <label for="customrange" class="form-label">사양정도</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-
-  <label for="customrange" class="form-label">그래픽</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-  <detalist id="tickmarks">
-    <option value="0"></option>
-    <option value="1"></option>
-    <option value="2"></option>
-  </detalist>
-</div>
-
-<div class="softwarebox">
-  <p class="software-name"><b>League Of Legend </b></p>
-  <img class="software_image" src="resource\lol.png" alt="image" />
-  <!--조절바-->
-  <label for="customrange" class="form-label">사양정도</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-
-  <label for="customrange" class="form-label">그래픽</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-  <detalist id="tickmarks">
-    <option value="0"></option>
-    <option value="1"></option>
-    <option value="2"></option>
-  </detalist>
 </div>
 <button type="submit" class="subm" style="float: right">
   <img src="resource\arrowbutton-next.png" alt="" /> &nbsp 저장
