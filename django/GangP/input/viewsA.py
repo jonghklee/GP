@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import othermatters
 # Create your views here.
 #현진
@@ -15,7 +15,11 @@ def create(request):
     matter1.operating = ','.join(matterlist['운영체제'])
 
     matter1.save()
-    return render(request, 'practice.html', {'matter1': matter1})
+    return redirect(page3)
+
+def page3(request):
+    return render(request, 'page3.html')
+
 
 
 
