@@ -15,47 +15,37 @@ function isboxchecked(softname){
 }
 </script>
 
-<script>
-    function box(softname){
-        if($('#'+softname).is(":checked") == true){
-            $('#'+softname+'_label').css('box-shadow', '0 0 0 #14FF2D80', '');
-        }else{
-            $('#'+softname+'_label').css( 'box-shadow','20px 15px 20px #14FF2D44');
-        }
-    }
-    </script>
-
 <style>
     input[type="checkbox"]{
     display:none;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    <!--가져다 대기 전-->
+
+    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+   
+
     #none2_label{
         box-shadow: 0 0 0 #000000;
-        
     }
-    <!--마우스 가져다 대면 테두리 생김-->
     #none2_label:hover{
-        border:3px solid #14FF2D80;
+        border:3px solid #EB24AD;
     }
-    <!--선택후-->
+
     #none1_label{
-        box-shadow: 20px 10px 20px #14FF2D44;
+        box-shadow: 20px 10px 20px #EB24AD;
     }
     hr{
-     
-        border: 3px;
-        height: 1px;
+        border: 2px;
+        height: 2px;
         margin-bottom: 20px;
-        background: linear-gradient( to right ,white,#2B2C36);
+        background: linear-gradient( to right ,#EB24AD,#2B2C36);
     }
     .mid{
-        color:white ;
-        font-family: 'Anton', sans-serif;
+        color:#EB24AD ;
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 30px;
         font-weight: 800;
         border: none;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
     img{
         margin: 10px 5px 5px 5px;
@@ -78,10 +68,9 @@ function isboxchecked(softname){
         <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
     </div>
     -->
-</form>
 
-    <p class="mid">Games</p>
-    <hr color="#14FF2D">
+    <p class="mid">게임</p>
+    <hr >
     
     <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
     <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/lol.png" width="250" height="150" /></label>
@@ -90,8 +79,9 @@ function isboxchecked(softname){
     <br>
     <input type="checkbox" name="name_none1" id="none1"/><label for="none1" ><img id="none1_label" src="./resource/battleground.png" width="250" height="150" /></label>
    
-    <p class="mid">Programs</p>
+    <p class="mid">프로그램</p>
     <hr>
     <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
+</form>
 
 {% endblock %}
