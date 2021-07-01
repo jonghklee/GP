@@ -33,6 +33,7 @@ class ChoosenSpec(models.Model):
 #전달폼 제작()
 
 class othermatters(models.Model): 
+    chspecnum = models.IntegerField(default=None,null=True)
     manufacturer = models.CharField(max_length = 100, default=None)
     laptopweight1 = models.CharField(max_length = 100,default=None)
     screensize = models.CharField(max_length = 100, default=None)
