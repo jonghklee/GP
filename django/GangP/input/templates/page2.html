@@ -11,6 +11,7 @@
         padding: 5px 10px 6px 7px;
         color:#cccccc;
         border-radius: 3px;
+         
     }
     button img{
         border: 0;
@@ -24,7 +25,7 @@
         color:#1D1F25;
         border-radius: 3px;
     }
-    ul{
+    ul.page2_{
        text-align:left;
        list-style:none;
     }
@@ -79,7 +80,7 @@
 {% endblock %}
 
 {% block body %}
-    <form action="{% url 'create' %}" method="post">
+    <form action="{% url 'create' %}"  method="post">
         {% csrf_token %}
         
         <div class="box1">
@@ -113,7 +114,7 @@
             }
             </script>
             <h2 style="color:#14FF2D;">제조사</h2>
-            <ul>
+            <ul class="page2_">
                 <li class="page2">
                     <label><input type='checkbox' name='selectall1' value='selectall1' onclick='selectAll1(this)'>전체선택</label>
                 </li>
@@ -171,7 +172,7 @@
             }
             </script>
             <h2 style="color:#14FF2D;">무게</h2>
-            <ul>
+            <ul class="page2_">
                 <li class="page2">
                     <label><input type='checkbox' name='selectall2' value='selectall2' onclick='selectAll2(this)'>전체선택</label>
                 </li>
@@ -223,7 +224,7 @@
             }
             </script>
             <h2 style="color:#14FF2D;">화면크기</h2>
-            <ul>
+            <ul class="page2_">
                 <li class="page2">
                     <label><input type='checkbox' name='selectall3' value='selectall3' onclick='selectAll3(this)'>전체선택</label>
                 </li>
@@ -275,7 +276,7 @@
             }
             </script>
             <h2 style="color:#14FF2D;">운영체제</h2>
-            <ul>
+            <ul class="page2_">
                 <li class="page2">
                     <label><input type='checkbox' name='selectall4' value='selectall4' onclick='selectAll4(this)'>전체선택</label>
                 </li>
@@ -297,15 +298,11 @@
             </ul>
         </div>
         <button type="submit" class="subm" style="float: right">
-            <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
+          <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
         </button>
         <button type="reset" class="subm" style="float: right">
             <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
         </button>
-        <div class="next">
-            <a href="{% url 'create' %}" style="color:#1D1F25"><strong>다음</strong></a>
-            
-        </div>
     </form>
 
 {% endblock %}

@@ -83,6 +83,8 @@
             text-align: center;
             color: white;
             margin-top: 50px;
+            position:fixed;
+            
         }
         .side-container{
             color:#EB24AD;
@@ -109,6 +111,28 @@
             bottom: 20px;
             text-align: center;
         }
+        div.button{
+            display:block;
+            background-color: #1D1F25;
+            border: 1px solid #14FF2D ;
+            cursor: pointer;
+            padding: 5px 10px 6px 7px;
+            color:#cccccc;
+            border-radius: 3px;
+            
+        }
+        div.button img{
+            border: 0;
+            padding:0;
+            width: 16px;
+            height:16px;   
+        }
+        div.button.subm:hover{
+            background-color:#14FF2D;
+            border:1px solid #1D1F25;
+            color:#1D1F25;
+            border-radius: 3px;
+        }
     </style>
     {% block style %}
     {% endblock %}
@@ -129,7 +153,7 @@
 
     </article>
 
-    <div class="side">
+    <div class="side" >
         <ul class="side-container">
             <li><a href="#">Software 선택</a></li>
             <p>▼</p>                      

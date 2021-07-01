@@ -66,8 +66,9 @@ function isboxchecked(softname){
     <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
     {%endif%}
     {%endfor%}
-
-    <input type="submit">
+    <div class="button">
+        <input class="button" type="submit" style="position:fixed; left: 1300px; bottom:50px; z-index:5">
+    </div>
     <!--
     <div class="next">
         <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
