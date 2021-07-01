@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TITLE</title>
     <style>
-        @font-face {
-            font-family: 'bitrocoreTTF';
-            src: url('fonts/bitrocoreTTF.ttf');
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+    
         body{
             margin: 0;
-            background-color: #2B2C36;
-            color: #14FF2D;
-            color: white;
+            background-color: #FDF5E2;
+            color: #EB24AD;
+            
             font-size: 20px;
+            font-family: 'Akaya Kanadaka', cursive;
+            
         }
         a{
-            color: white;
+            color: black;
             text-decoration: none;
         }
         .nav-container{
@@ -29,13 +29,43 @@
             padding: 0;
             position: fixed;
             list-style-type: none;
-            background-color: #1D1F25;
+            background-color: #FFED92;
+            
+            font-size: 20px;
+        }
+        .nav-container a{
+            color:black;
+            text-decoration: none;
+            position: relative;
+            font-size: 30px;
+            font-family: 'Gaegu', cursive;
+        }
+        
+        .nav-container a::after{
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background:#EB24AD ;
+            transition: all .5s ease-out;
+        
+        }
+        .nav-container a:hover::after{
+            width:100%;
+            
         }
         nav{
             top:0;
         }
         .nav-item{
-            padding: 15px;
+            padding: 10px;
+            margin: 0px 10px 0 5px;
+        }
+        .nav-item a:hover{
+            color:#EB24AD ;
         }
         article{
             padding-top: 56.4px;
@@ -45,22 +75,27 @@
         .side{
             width: 250px;
             height: 100%;
-            background-color: #1D1F25;
+            background-color: #FFED92;
             position: fixed;
             right: 0px;
             top: 0px;
             text-align: center;
+            color: black;
+            margin-top: 50px;
         }
         .side-container{
-            color:#14FF2D;
+            color:#EB24AD;
             list-style-type: none;
             padding-left: 30px;
             padding-right: 30px;
+            font-family: 'Gaegu', cursive;
+            font-size: 25px;
+            
         }
         #LOGO{
-            color:#14FF2D;
-            font-size: 20px;
-            font-family: 'bitrocoreTTF';
+            color:#EB24AD;
+            font-size: 30px;
+            font-family: 'Gaegu', cursive;
         }
         .next{
             width: 210px;
@@ -82,7 +117,7 @@
     <nav>
         <!--네비게이션바 / 링크는 장고 제작 후에 설정-->
         <ul class="nav-container">
-            <li class="nav-item"><a href="{% url 'page0' %}" id="LOGO">웹404</a></li>
+            <li class="nav-item"><a href="{% url 'page0' %}" id="LOGO">고구마</a></li>
             <li class="nav-item"><a href="{% url 'page0' %}">노트북 선택</a></li>
             <li class="nav-item"><a href="#">노트북 둘러보기</a></li>
         </ul>
@@ -95,9 +130,9 @@
 
     <div class="side">
         <ul class="side-container">
-            <li><a href="#">소프트웨어 선택</a></li>
+            <li><a href="#">Software 선택</a></li>
             <p>▼</p>                      
-            <li><a href="#">소프트웨어 세부설정</a></li>
+            <li><a href="#">Software 세부설정</a></li>
             <p>▼</p>                      
             <li><a href="#">추가기능 (1)</a></li>
             <p>▼</p>                      

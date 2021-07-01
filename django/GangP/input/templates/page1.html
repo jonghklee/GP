@@ -29,30 +29,31 @@ function isboxchecked(softname){
     input[type="checkbox"]{
     display:none;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    <!--가져다 대기 전-->
+    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+   
     #none2_label{
         box-shadow: 0 0 0 #000000;
         
     }
-    <!--마우스 가져다 대면 테두리 생김-->
+   
     #none2_label:hover{
-        border:3px solid #14FF2D80;
+        border:3px solid #EB24AD;
     }
-    <!--선택후-->
+    
     #none1_label{
-        box-shadow: 20px 10px 20px #14FF2D44;
+        box-shadow: 20px 10px 20px #EB24AD;
     }
     hr{
      
         border: 3px;
-        height: 1px;
+        height: 2px;
         margin-bottom: 20px;
-        background: linear-gradient( to right ,white,#2B2C36);
+        background: linear-gradient( to right ,#EB24AD,#FDF5E2);
     }
     .mid{
-        color:white ;
-        font-family: 'Anton', sans-serif;
+        color:#EB24AD ;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
         font-weight: 800;
         border: none;
         margin-bottom: 5px;
@@ -81,7 +82,7 @@ function isboxchecked(softname){
 </form>
 
     <p class="mid">Games</p>
-    <hr color="#14FF2D">
+    <hr >
     
     <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
     <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/lol.png" width="250" height="150" /></label>
