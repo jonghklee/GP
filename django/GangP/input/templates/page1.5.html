@@ -30,9 +30,6 @@
     padding: 0 0 0 20px;
   }
 
-  #tickmarks {
-  }
-
   button {
     display: block;
     background-color: #1d1f25;
@@ -70,7 +67,7 @@
     var init = function () {
       var slider3 = new rSlider({
         target: "#slider3",
-        values: ["최하옵", "중옵", "상옵"],
+        values: ["하옵", "중옵", "상옵"],
         range: false,
         set: [5],
         tooltip: true,
@@ -81,7 +78,7 @@
 
       var slider2 = new rSlider({
         target: "#slider2",
-        values: ["최하옵", "기본옵"],
+        values: ["하옵", "기본"],
         range: false,
         set: [5],
         tooltip: true,
@@ -93,7 +90,7 @@
     window.onload = init;
   })();
 </script>
-{% endblock %} {% block body %}
+{% endblock %} {% block body %} {% load static %}
 <form action="{% url 'page2' %}" method="POST">
   {%csrf_token%} {% for soft in softs%} {% if soft.version == 3%}
   <div class="softwarebox">
@@ -102,7 +99,7 @@
     <label for="" class="form-label">사양</label>
     <!--label.for : id 값 가리킴-->
     <div class="slider-container">
-      <input type="text" id="slider3" />
+      <input type="text" id="slider3" class="invisible" />
     </div>
   </div>
   {% elif soft.version == 2 %}
@@ -111,15 +108,8 @@
     <img class="software_image" src="{{soft.img.url}}" alt="image" />
     <label for="customrange" class="form-label">사양</label>
     <div class="slider-container">
-      <input type="text" id="slider2" />
+      <input type="text" id="slider2" class="invisible" />
     </div>
-    <input
-      type="range"
-      name="{{soft.name}}"
-      min="1"
-      max="{{soft.version}}"
-      step="1"
-    />
   </div>
   {% else %}
   <div class="softwarebox">
@@ -130,7 +120,18 @@
   <input type="submit" />
 </form>
 
-<button type="submit" class="subm" style="float: right">
-  <img src="resource\arrowbutton-next.png" alt="" /> &nbsp 저장
+<button
+  type="submit"
+  class="subm"
+  style="float: right; position: fixed; left: 1330px; bottom: 50px; z-index: 5"
+>
+  <img src="{% static 'arrowbutton-next_.png'%}" alt="" /> &nbsp 선택
+</button>
+<button
+  type="reset"
+  class="subm"
+  style="float: right; position: fixed; left: 1420px; bottom: 50px; z-index: 5"
+>
+  <img src="resource\arrowbutton-next.png" alt="" /> &nbsp 리셋
 </button>
 {% endblock %}

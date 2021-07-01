@@ -32,6 +32,8 @@ def page1_5(request):
             else:
                 softlist.append(soft)
 
+
+    #여기서 버전을 나누자
     return render(request, 'page1.5.html', {'softs':softlist})
 #2. 페이지 생성 후
 
