@@ -7,7 +7,28 @@
     <title>TITLE</title>
     <style>
        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-    
+        button{
+            display:block;
+            background-color: #1D1F25;
+            border: 1px solid #EB24AD;
+            cursor: pointer;
+            padding: 5px 10px 6px 7px;
+            color:#cccccc;
+            border-radius: 3px;
+
+        }
+        button img{
+            border: 0;
+            padding:0;
+            width: 16px;
+            height:16px; 
+        }
+        button.subm:hover{
+            background-color:#EB24AD;
+            border:1px solid #1D1F25;
+            color:#1D1F25;
+            border-radius: 3px;
+        }
         body{
             margin: 0;
             background-color: #2B2C36;
@@ -83,6 +104,8 @@
             text-align: center;
             color: white;
             margin-top: 50px;
+            position:fixed;
+            
         }
         .side-container{
             color:#EB24AD;
@@ -102,13 +125,14 @@
             width: 210px;
             height: 60px;
             font-size: 40px;
-            background-color: #14FF2D;
+            background-color: #EB24AD;
             color: #1D1F25;
             position: fixed;
             right: 20px;
             bottom: 20px;
             text-align: center;
         }
+        
     </style>
     {% block style %}
     {% endblock %}
@@ -129,7 +153,7 @@
 
     </article>
 
-    <div class="side">
+    <div class="side" >
         <ul class="side-container">
             <li><a href="#">Software 선택</a></li>
             <p>▼</p>                      
