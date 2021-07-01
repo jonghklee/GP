@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block style %}
+    <link rel="stylesheet" href="resource/css/rSlider.min.css">
+    <script src="resource/js/rSlider.min.js"></script>
     <style>
         .softwarebox{
               background-color: white; 
@@ -61,12 +63,22 @@
             display: none;
         }
     </style>
+    <script>
+        var mySlider = new rSlider({
+            target: '#slider',
+            values: [1, 2, 3],
+            range: true,
+            tooltip: true,
+            scale: true,
+            labels: true,
+            set: [1, 2],
+        });
+    </script>
     {% endblock %}
 
     {% block body %}
 
-
-
+    <input type="range" id="slider" />
 
     <form action="{% url 'page2' %}" method="POST">
     {%csrf_token%}
@@ -75,8 +87,12 @@
             <p class="software-name"> <strong> {{soft.name}} </strong> </p>
             <img class="software_image" src="{{soft.img.url}}" alt="image" >
 
-            {% if soft.version != 0%}
-                <label for="customrange" class="form-label">사양정도</label>
+            {% if soft.version == 3%}
+                <label for="customrange" class="form-label">사양</label>
+                <input type="range" name="{{soft.name}}" min="1" max="{{soft.version}}" step="1"/>
+
+            {% elif soft.version != 0 %}
+                <label for="customrange" class="form-label">사양</label>
                 <input type="range" name="{{soft.name}}" min="1" max="{{soft.version}}" step="1"/>
 
             {% else %}
