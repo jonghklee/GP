@@ -3,10 +3,10 @@
 
 <!DOCTYPE html>
 <html lang="kr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TITLE</title>
     <style>
     
@@ -98,34 +98,120 @@
             background-color: white;
         }
        
-    </style>
-</head>
+      @font-face {
+        font-family: "bitrocoreTTF";
+        src: url("{% static  'fonts/bitrocoreTTF.ttf' %}");
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
+      body {
+        margin: 30px;
+        background-color: #2b2c36;
+        color: #eb24ad;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        position: relative;
+      }
 
-<body>
+      #LOGO {
+        color: #eb24ad;
+        font-size: 20px;
+        font-family: "bitrocoreTTF";
+      }
+      .point {
+        color: #eb24ad;
+        font-size: 30px;
+        font-weight: 150;
+        font-family: "bitrocoreTTF";
+      }
+      .normal {
+        color: white;
+        font-size: 30px;
+        font-weight: 150;
+        font-family: "bitrocoreTTF";
+      }
+      .memo {
+        color: white;
+        font-size: 20px;
+        font-weight: 50;
+        font-family: "Nanum Gothic Coding", monospace;
+      }
+      hr {
+        border: 2px;
+        height: 2px;
+        width: 50%;
+        margin-bottom: 20px;
+
+        background: #eb24ad;
+      }
+      .ban {
+        background-color: rgba(221, 41, 191, 0.089);
+
+        border: none;
+        padding: 0;
+        width: 600px;
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        height: 100%;
+      }
+      .btn1 {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        width: 200px;
+        padding: 10px 20px 10px 20px;
+        margin-top: 15px;
+        margin-right: 10px;
+
+        border-radius: 10px;
+        transition: all 0.1s;
+
+        font-family: "bitrocoreTTF";
+        background-color: #eb24ac56;
+        display: inline-block;
+      }
+      #login {
+        margin-top: 40px;
+        margin-left: 20px;
+      }
+      .btn1:active {
+        transform: translateY(3px);
+      }
+      .btn1:hover {
+        color: #;
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <body>
     <article>
-   
-        <div id="LOGO" style="font-size:100px">고구마</div>
-        <hr>
-        <div class="ban">
-        <span class="point">고</span> <span class="normal">리타분한</span> 
-       
-        <span class="point">구</span> <span class="normal">글링의</span> 
-     
-        <span class="point">마</span> <span class="normal">침표.</span> 
-       <br/>
-       <p class="memo">당신의 노트북, 이제 고구마하세요. </p>
+      <div id="LOGO" style="font-size: 100px">고구마</div>
+      <hr />
+      <div class="ban">
+        <span class="point">고</span> <span class="normal">리타분한</span>
+
+        <span class="point">구</span> <span class="normal">글링의</span>
+
+        <span class="point">마</span> <span class="normal">침표.</span>
+        <br />
+        <p class="memo">당신의 노트북, 이제 고구마하세요.</p>
         <a href="{% url 'page1' %}">page1</a>
         <a href="{% url 'page1_5' %}">page1.5</a>
-        <a  href="{% url 'page2' %}">page2</a>
-        <br/>
-       <a class="btn1" id="login"  href="{% url 'login' %}">login</a>
-        <a class="btn1" href="{% url 'logout' %}">logout</a><br>
-        <a class="btn1" style="width: 460px; margin-left: 15px;"href="{% url 'signup' %}">signup</a><br>
+        <a href="{% url 'page2' %}">page2</a>
+        <br />
+        <a class="btn1" id="login" href="{% url 'login' %}">login</a>
+        <a class="btn1" href="{% url 'logout' %}">logout</a><br />
+        <a
+          class="btn1"
+          style="width: 460px; margin-left: 15px"
+          href="{% url 'signup' %}"
+          >signup</a
+        ><br />
 
-        {% if user.is_authenticated %}
-        {{user.username}}
-        {% endif %}
-    </div>
+        {% if user.is_authenticated %} {{user.username}} {% endif %}
+      </div>
     </article>
-</body>
+  </body>
 </html>
