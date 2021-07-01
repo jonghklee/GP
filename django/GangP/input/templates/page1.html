@@ -15,36 +15,25 @@ function isboxchecked(softname){
 }
 </script>
 
-<script>
-    function box(softname){
-        if($('#'+softname).is(":checked") == true){
-            $('#'+softname+'_label').css('box-shadow', '0 0 0 #14FF2D80', '');
-        }else{
-            $('#'+softname+'_label').css( 'box-shadow','20px 15px 20px #14FF2D44');
-        }
-    }
-    </script>
-
 <style>
     input[type="checkbox"]{
     display:none;
     }
+
     @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
    
+
     #none2_label{
         box-shadow: 0 0 0 #000000;
-        
     }
-   
     #none2_label:hover{
         border:3px solid #EB24AD;
     }
-    
+
     #none1_label{
         box-shadow: 20px 10px 20px #EB24AD;
     }
     hr{
-     
         border: 3px;
         height: 2px;
         margin-bottom: 20px;
@@ -79,7 +68,6 @@ function isboxchecked(softname){
         <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
     </div>
     -->
-</form>
 
     <p class="mid">Games</p>
     <hr >
@@ -94,5 +82,6 @@ function isboxchecked(softname){
     <p class="mid">Programs</p>
     <hr>
     <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
+</form>
 
 {% endblock %}

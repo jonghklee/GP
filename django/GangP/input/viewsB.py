@@ -35,7 +35,7 @@ def page1_5(request):
     return render(request, 'page1.5.html', {'softs':softlist})
 #2. 페이지 생성 후
 
-def new(request):
+def page2(request):
     listpost = request.POST
     listpost = dict(listpost)
     listpostkey = []
@@ -68,6 +68,6 @@ def new(request):
     newspec.hdd = hdd
     newspec.save()
 
-    return redirect('page2')
+    return render(request, 'page2.html')
 
 
