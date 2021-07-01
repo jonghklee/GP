@@ -8,9 +8,9 @@
 <script>
 function isboxchecked(softname){
     if($('#'+softname).is(":checked") == true){
-        $('#'+softname+'_label').css('box-shadow', '0 0 0 #16D2FF');
+        $('#'+softname+'_label').css('box-shadow', '0 0 0 #000000');
     }else{
-        $('#'+softname+'_label').css('box-shadow', '20px 15px 20px #14FF2D44');
+        $('#'+softname+'_label').css('box-shadow', '20px 10px 20px #EB24AD');
     }
 }
 </script>
@@ -21,18 +21,7 @@ function isboxchecked(softname){
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-   
 
-    #none2_label{
-        box-shadow: 0 0 0 #000000;
-    }
-    #none2_label:hover{
-        border:3px solid #EB24AD;
-    }
-
-    #none1_label{
-        box-shadow: 20px 10px 20px #EB24AD;
-    }
     hr{
         border: 2px;
         height: 2px;
@@ -50,6 +39,10 @@ function isboxchecked(softname){
     img{
         margin: 10px 5px 5px 5px;
     }
+    img:hover{
+        margin: 7px 2px 2px 2px;
+        border:3px solid #EB24AD;
+    }
 </style>
 {% endblock %}
 
@@ -57,9 +50,21 @@ function isboxchecked(softname){
 
 <form action="{% url 'page1_5' %}" method="POST">
     {%csrf_token%}
+
+    <p class="mid">게임</p>
+    <hr >
     {%for soft in softs%}
-    <!--나중에 꼭 수정하기!!!-->
+    {%if soft.boonryu == '게임'%}
     <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
+    {%endif%}
+    {%endfor%}
+
+    <p class="mid">프로그램</p>
+    <hr>
+    {%for soft in softs%}
+    {%if soft.boonryu == '공학'%}
+    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
+    {%endif%}
     {%endfor%}
 
     <input type="submit">
@@ -69,19 +74,7 @@ function isboxchecked(softname){
     </div>
     -->
 
-    <p class="mid">게임</p>
-    <hr >
     
-    <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
-    <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/lol.png" width="250" height="150" /></label>
-    <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
-    
-    <br>
-    <input type="checkbox" name="name_none1" id="none1"/><label for="none1" ><img id="none1_label" src="./resource/battleground.png" width="250" height="150" /></label>
-   
-    <p class="mid">프로그램</p>
-    <hr>
-    <input type="checkbox" name="name_none2" id="none2"/><label for="none2" ><img id="none2_label" src="./resource/battleground.png" width="250" height="150" /></label>
 </form>
 
 {% endblock %}
