@@ -9,6 +9,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TITLE</title>
     <style>
+    
+        @font-face {
+            font-family: 'bitrocoreTTF';
+            src: url("{% static  'fonts/bitrocoreTTF.ttf' %}");
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+        body{
+            margin: 30px;
+            background-color: #2B2C36;
+            color: #EB24AD;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        #LOGO{
+            color:#EB24AD;
+            font-size: 20px;
+            font-family: 'bitrocoreTTF';
+        }
+        .point{
+            color:#EB24AD;
+            font-size: 30px;
+            font-weight: 150;
+            font-family: 'bitrocoreTTF';
+        }
+        .normal{
+            color:white;
+            font-size: 30px;
+            font-weight: 150;
+            font-family: 'bitrocoreTTF';
+        }
+        .memo{
+            color: white;
+            font-size: 20px;
+            font-weight: 50;
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+        hr{
+        border: 2px;
+        height: 2px;
+        width: 50%;
+        margin-bottom: 20px;
+        
+        background:#EB24AD;
+        }
+        .ban{
+            background-color:rgba(221, 41, 191, 0.089);
+            
+            border: none;
+            padding:0;
+            width: 600px;
+            position:absolute;
+            left:50%;
+            margin-left: -300px;
+            height: 100%;
+
+        }
+        .btn1{
+            text-decoration: none;
+            font-size: 20px;
+            color:white;
+            width:200px;
+            padding:10px 20px 10px 20px;
+            margin-top:15px;
+            margin-right: 10px;
+
+            border-radius: 10px;
+            transition: all 0.1s;
+            
+            font-family: 'bitrocoreTTF';
+            background-color: #eb24ac56;
+            display: inline-block;
+            
+        }
+        #login{
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+        .btn1:active{
+            transform: translateY(3px);
+
+        }
+        .btn1:hover{
+            color:#EB24AD;
+            background-color: white;
+        }
+       
       @font-face {
         font-family: "bitrocoreTTF";
         src: url("{% static  'fonts/bitrocoreTTF.ttf' %}");
