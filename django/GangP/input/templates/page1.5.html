@@ -58,8 +58,9 @@
     display: none;
   }
   .slider-container {
-    text-align: center;
-    width: 80px;
+    position: relative;
+    left: 300px;
+    width: 400px;
   }
 </style>
 <script>
@@ -80,7 +81,7 @@
 
       var slider2 = new rSlider({
         target: "#slider2",
-        values: ["최하옵", "중옵", "상옵"],
+        values: ["최하옵", "기본옵"],
         range: false,
         set: [5],
         tooltip: true,
@@ -103,15 +104,15 @@
     <div class="slider-container">
       <input type="text" id="slider3" />
     </div>
-    <div class="slider-container">
-      <input type="text" id="slider2" />
-    </div>
   </div>
   {% elif soft.version == 2 %}
   <div class="softwarebox">
     <p class="software-name"><strong> {{soft.name}} </strong></p>
     <img class="software_image" src="{{soft.img.url}}" alt="image" />
     <label for="customrange" class="form-label">사양</label>
+    <div class="slider-container">
+      <input type="text" id="slider2" />
+    </div>
     <input
       type="range"
       name="{{soft.name}}"
@@ -124,90 +125,12 @@
   <div class="softwarebox">
     <p class="software-name"><strong> {{soft.name}} </strong></p>
     <img class="software_image" src="{{soft.img.url}}" alt="image" />
-    <label for="customrange" class="form-label">사양</label>
-    <input
-      type="range"
-      name="{{soft.name}}"
-      min="1"
-      max="{{soft.version}}"
-      step="1"
-    />
   </div>
   {% endif %} {% endfor %}
   <input type="submit" />
 </form>
 
-<div class="slider-container">
-  <input type="text" id="sliderA" class="slider" />
-</div>
-<<<<<<< HEAD
-<div class="softwarebox">
-  <p class="software-name"><b>OverWatch </b></p>
-  <img class="software_image" src="resource/overwatch.jpg" alt="image" />
-  <!--조절바-->
-  <label for="customrange" class="form-label">사양정도</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-
-  <label for="customrange" class="form-label">그래픽</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-  <detalist id="tickmarks">
-    <option value="0"></option>
-    <option value="1"></option>
-    <option value="2"></option>
-  </detalist>
-</div>
-
-<div class="softwarebox">
-  <p class="software-name"><b>League Of Legend </b></p>
-  <img class="software_image" src="resource\lol.png" alt="image" />
-  <!--조절바-->
-  <label for="customrange" class="form-label">사양정도</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-
-  <label for="customrange" class="form-label">그래픽</label>
-  <input
-    type="range"
-    class="form-range"
-    min="0"
-    max="2"
-    step="1"
-    list="tickmarks"
-  />
-  <detalist id="tickmarks">
-    <option value="0"></option>
-    <option value="1"></option>
-    <option value="2"></option>
-  </detalist>
-</div>
-<button type="submit" class="subm" style="float: right; position:fixed; left: 1330px; bottom:50px; z-index:5">
-  <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
-</button>
-<button type="reset" class="subm" style="float: right; position:fixed; left: 1420px; bottom:50px; z-index:5">
-    <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
-=======
 <button type="submit" class="subm" style="float: right">
   <img src="resource\arrowbutton-next.png" alt="" /> &nbsp 저장
->>>>>>> b882f3c42517353e669d9adc979f42340753475d
 </button>
 {% endblock %}
