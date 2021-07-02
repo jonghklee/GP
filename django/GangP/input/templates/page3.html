@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>page 3</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/rSlider.min.css' %}" />
+<script src="{% static 'js/rSlider.min.js' %} "></script>        
+
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
@@ -56,13 +60,13 @@
             
         }
         </style>
+{% load static %}        
     </head>
-
     <body>
         <div class="v_selectbox">
             <div class="selectbox">  
             <p class="laptop-name"> <b>[LG] Gram15 2021 </b></p>
-            <img class="laptop_image" src="resource\lg gram.jpg" alt="image" >
+            <img class="laptop_image" src="{% static 'lg gram.jpg'%}" alt="image" >
             <p class="memo"> 모델명: 15Z90P-GR56K</p>
             <p> CPU: i5 / SSD: 512 GB/ memory: 8GB  </p>
             <p>display: 15.6 inch, IPS LED / weight:1,120g/ color: white/ size: 357x224x17.4mm</p>
@@ -72,7 +76,7 @@
         <div class="v_selectbox">
             <div class="selectbox">  
             <p class="laptop-name"> <b> [SAMSUNG] GalaxyBook Pro </b></p>
-            <img class="laptop_image" src="resource\samsungnotebpook.PNG" alt="image" >
+            <img class="laptop_image" src="{% static 'samsungnotebpook.png'%}" alt="image" >
             <p class="memo"> 모델명: NT953XDB-KC58B</p>
             <p> CPU: i5 / SSD: 256 GB/ memory: 8GB</p>
             <p>display: 13.3 inch,OLED / weight: 0.88kg/ color: mistic blue/ size: 304.4x199.8x11.2mm</p>
@@ -82,7 +86,7 @@
         <div class="v_selectbox">
             <div class="selectbox">  
             <p class="laptop-name"> <b> [LG] Gram 260 </b></p>
-            <img class="laptop_image" src="resource\samsungnotebpook.PNG" alt="image" >
+            <img class="laptop_image" src="{% static 'LG 360.jpg'%}" alt="image" >
             <p class="memo"> 모델명: 14TD90P-GX5BK</p>
             <p> CPU: i5 / SSD: 256 GB/ memory: 16GB</p>
             <p>display: 13.3 inch,OLED / weight: 1250g/ color: black/ size: 314x220x16.75mm</p>
