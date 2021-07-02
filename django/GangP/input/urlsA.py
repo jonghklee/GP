@@ -3,5 +3,6 @@ from input import viewsA
 
 
 urlpatterns = [
-    path('create/', viewsA.create, name="create")
+    path('create/', viewsA.create, name="create"),
+    path('page3/', viewsA.page3, name="page3"),
 ]

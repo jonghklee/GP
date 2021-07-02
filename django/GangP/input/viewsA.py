@@ -15,7 +15,7 @@ def create(request):
     matter1.operating = ','.join(matterlist['운영체제'])
 
     matter1.save()
-    return redirect('viewsA/page3')
+    return redirect('page3')
 
 def page3(request):
     return render(request, 'page3.html')
