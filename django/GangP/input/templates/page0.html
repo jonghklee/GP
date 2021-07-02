@@ -156,34 +156,29 @@
       }
       .ban {
         background-color: rgba(221, 41, 191, 0.089);
-
+          
         border: none;
         padding: 0;
         width: 600px;
+        height: 200px;
         position: absolute;
         left: 50%;
         margin-left: -300px;
-        height: 100%;
+        
       }
       .btn1 {
         text-decoration: none;
-<<<<<<< HEAD
+
         font-size: 15px;
         color: white;
         width: 100px;
         padding: 5px;
-=======
-        font-size: 20px;
-        color: white;
-        width: 200px;
-        padding: 10px 20px 10px 20px;
->>>>>>> fd0b094e811b4585a5f2db0e3051dc4337a2b2cd
+
         margin-top: 15px;
         margin-right: 10px;
 
         border-radius: 10px;
         transition: all 0.1s;
-<<<<<<< HEAD
         
         font-family: "bitrocoreTTF";
         background-color: #eb24ac56;
@@ -191,12 +186,6 @@
         position: relative;
      
 
-=======
-
-        font-family: "bitrocoreTTF";
-        background-color: #eb24ac56;
-        display: inline-block;
->>>>>>> fd0b094e811b4585a5f2db0e3051dc4337a2b2cd
       }
       #login {
         margin-top: 40px;
@@ -209,7 +198,6 @@
         color: #;
         background-color: white;
       }
-<<<<<<< HEAD
       header{
           height: 75px;
           display: flex;
@@ -234,13 +222,10 @@
       .btn2:hover{
           color: white;
       }
-=======
->>>>>>> fd0b094e811b4585a5f2db0e3051dc4337a2b2cd
     </style>
   </head>
 
   <body>
-<<<<<<< HEAD
       <header>
       <nav>
     <a class="btn1" id="login" href="{% url 'login' %}">login</a>
@@ -256,12 +241,6 @@
       <hr />
       <div class="ban">
         <br/>  
-=======
-    <article>
-      <div id="LOGO" style="font-size: 100px">고구마</div>
-      <hr />
-      <div class="ban">
->>>>>>> fd0b094e811b4585a5f2db0e3051dc4337a2b2cd
         <span class="point">고</span> <span class="normal">리타분한</span>
 
         <span class="point">구</span> <span class="normal">글링의</span>
@@ -269,25 +248,10 @@
         <span class="point">마</span> <span class="normal">침표.</span>
         <br />
         <p class="memo">당신의 노트북, 이제 고구마하세요.</p>
-<<<<<<< HEAD
         <a class="btn2" href="{% url 'page1' %}">page1</a>
        
         <br />
         
-=======
-        <a href="{% url 'page1' %}">page1</a>
-        <a href="{% url 'page1_5' %}">page1.5</a>
-        <a href="{% url 'page2' %}">page2</a>
-        <br />
-        <a class="btn1" id="login" href="{% url 'login' %}">login</a>
-        <a class="btn1" href="{% url 'logout' %}">logout</a><br />
-        <a
-          class="btn1"
-          style="width: 460px; margin-left: 15px"
-          href="{% url 'signup' %}"
-          >signup</a
-        ><br />
->>>>>>> fd0b094e811b4585a5f2db0e3051dc4337a2b2cd
 
         {% if user.is_authenticated %} {{user.username}} {% endif %}
       </div>
