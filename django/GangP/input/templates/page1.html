@@ -1,10 +1,8 @@
 
-{% extends 'base.html' %}
-
-{% block style %}
-
+{% extends 'base.html' %} {% block style %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/rSlider.min.css' %}" />
 <script src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
-
+<script src="{% static 'js/rSlider.min.js' %} "></script>
 <script>
 function isboxchecked(softname){
     if($('#'+softname).is(":checked") == true){
@@ -16,8 +14,29 @@ function isboxchecked(softname){
 </script>
 
 <style>
+    button {
+    display: block;
+    background-color: #1d1f25;
+    border: 1px solid #eb24ad;
+    cursor: pointer;
+    padding: 5px 10px 6px 7px;
+    color: #cccccc;
+    border-radius: 3px;
+    }
+    button img {
+      border: 0;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+    }
+    button.subm:hover {
+      background-color: #eb24ad;
+      border: 1px solid #1d1f25;
+      color: #1d1f25;
+      border-radius: 3px;
+    }
     input[type="checkbox"]{
-    display:none;
+      display:none;
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
@@ -36,10 +55,10 @@ function isboxchecked(softname){
         border: none;
         margin-bottom: 0px;
     }
-    img{
+    img.page1img{
         margin: 10px 5px 5px 5px;
     }
-    img:hover{
+    img.page1img:hover{
         margin: 7px 2px 2px 2px;
         border:3px solid #EB24AD;
     }
@@ -47,6 +66,7 @@ function isboxchecked(softname){
 {% endblock %}
 
 {% block body %}
+{% load static %}
 
 <form action="{% url 'page1_5' %}" method="POST">
     {%csrf_token%}
@@ -55,7 +75,7 @@ function isboxchecked(softname){
     <hr >
     {%for soft in softs%}
     {%if soft.boonryu == '게임'%}
-    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
+    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img class="page1img" id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
     {%endif%}
     {%endfor%}
 
@@ -63,13 +83,10 @@ function isboxchecked(softname){
     <hr>
     {%for soft in softs%}
     {%if soft.boonryu == '공학'%}
-    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
+    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img class="page1img" id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
     {%endif%}
     {%endfor%}
-    <button type="submit" class="subm" style="font-size:20px; font-family: 'Do Hyeon', sans-serif; color:white; float: right; position:fixed; left: 1330px; bottom:50px; z-index:5">선택</button>
-    <button type="reset" class="subm" style="float: right; position:fixed; left: 1420px; bottom:50px; z-index:5">
-        <img src="GP\django\GangP\input\templates\resource\arrowbutton-before.png" alt=""> &nbsp 리셋
-    </button>
+    
     
     <!--
     <div class="next">
@@ -79,5 +96,18 @@ function isboxchecked(softname){
 
     
 </form>
-
+<button
+  type="submit"
+  class="subm"
+  style="float: right; position: fixed; left: 1330px; bottom: 50px; z-index: 5"
+>
+  <img src="{% static 'arrow.png'%}" alt="" /> &nbsp 선택
+</button>
+<button
+  type="reset"
+  class="subm"
+  style="float: right; position: fixed; left: 1420px; bottom: 50px; z-index: 5"
+>
+  <img class="button" src="{% static 'arrow.png'%}" alt="" /> &nbsp 리셋
+</button>
 {% endblock %}
