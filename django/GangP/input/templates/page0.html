@@ -50,98 +50,9 @@
             font-size: 20px;
             font-weight: 900;
             font-family: 'Noto Serif KR', serif;
+       
         }
         hr{
-        border: 2px;
-        height: 2px;
-        width: 50%;
-        margin-bottom: 20px;
-        
-        background:#EB24AD;
-        }
-        .ban{
-            background-color:rgba(221, 41, 191, 0.089);
-            
-            border: none;
-            padding:0;
-            width: 600px;
-            position:absolute;
-            left:50%;
-            margin-left: -300px;
-            height: 100%;
-            text-align: center;
-           
-
-        }
-        .btn1{
-            text-decoration: none;
-            font-size: 20px;
-            color:white;
-            width:200px;
-            padding:10px 20px 10px 20px;
-            margin-top:15px;
-            margin-right: 10px;
-
-            border-radius: 10px;
-            transition: all 0.1s;
-            
-            font-family: 'bitrocoreTTF';
-            background-color: #eb24ac56;
-            display: inline-block;
-            
-        }
-        #login{
-            margin-top: 40px;
-            margin-left: 20px;
-        }
-        .btn1:active{
-            transform: translateY(3px);
-
-        }
-        .btn1:hover{
-            color:#EB24AD;
-            background-color: white;
-        }
-       
-      @font-face {
-        font-family: "bitrocoreTTF";
-        src: url("{% static  'fonts/bitrocoreTTF.ttf' %}");
-      }
-      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
-      body {
-        margin: 30px;
-        background-color: #2b2c36;
-        color: #EB24AD;
-        color: white;
-        font-size: 20px;
-        
-        position: relative;
-      }
-
-      #LOGO {
-        color: #eb24ad;
-        font-size: 20px;
-        font-family: "bitrocoreTTF";
-      }
-      .point {
-        color: #eb24ad;
-        font-size: 30px;
-        font-weight: 150;
-        font-family: "bitrocoreTTF";
-      }
-      .normal {
-        color: white;
-        font-size: 30px;
-        font-weight: 150;
-        font-family: "bitrocoreTTF";
-      }
-      .memo {
-        color: white;
-        font-size: 20px;
-        font-weight: 50;
-        font-family: 'Noto Serif KR', serif;
-      }
-      hr {
         border: 2px;
         height: 2px;
         width: 50%;
@@ -151,36 +62,30 @@
       }
       .ban {
         background-color: rgba(221, 41, 191, 0.089);
-          
         border: none;
         padding: 0;
         width: 600px;
-        height: 200px;
-        position: absolute;e
+        position: absolute;
         left: 50%;
         margin-left: -300px;
-        
+        height: 250px;
+        text-align: center;
       }
       .btn1 {
         text-decoration: none;
-
-        font-size: 15px;
+        font-size: 20px;
         color: white;
-        width: 100px;
-        padding: 5px;
-
+        width: 200px;
+        padding: 10px 20px 10px 20px;
         margin-top: 15px;
         margin-right: 10px;
 
         border-radius: 10px;
         transition: all 0.1s;
-        
+
         font-family: "bitrocoreTTF";
         background-color: #eb24ac56;
         display: inline-block;
-        position: relative;
-     
-
       }
       #login {
         margin-top: 40px;
@@ -190,7 +95,7 @@
         transform: translateY(3px);
       }
       .btn1:hover {
-        color: #;
+        color: #eb24ad;
         background-color: white;
       }
       header{
@@ -217,25 +122,32 @@
       .btn2:hover{
           color: white;
       }
+     
     </style>
   </head>
 
   <body>
-      <header>
+    <header>
       <nav>
-    <a class="btn1" id="login" href="{% url 'login' %}">login</a>
-    <a class="btn1" href="{% url 'logout' %}">logout</a>
-    <a class="btn1" id="sign" href="{% url 'signup' %}">signup</a>
+        {% if user.is_authenticated %}
+        <a class="btn1" href="">{{user.username}}</a>
+        <a class="btn1" href="{% url 'logout' %}">logout</a>
+        {% else %}
+        <a class="btn1" id="login" href="{% url 'login' %}">login</a>
+        <a class="btn1" id="sign" href="{% url 'signup' %}">signup</a>
+
+        {% endif %}
       </nav>
     </header>
-    <br/>
-    <br/>
+    <br />
+    <br />
+   
     <article>
-     
       <div id="LOGO" style="font-size: 100px">고구마</div>
       <hr />
       <div class="ban">
-        <br/>  
+        <br />
+        <br/>
         <span class="point">고</span> <span class="normal">리타분한</span>
 
         <span class="point">구</span> <span class="normal">글링의</span>
@@ -244,10 +156,8 @@
         <br />
         <p class="memo">당신의 노트북, 이제 고구마하세요.</p>
         <a class="btn2" href="{% url 'page1' %}">page1</a>
-       
-        <br />
-        
 
+        <br/>
         {% if user.is_authenticated %} {{user.username}} {% endif %}
       </div>
     </article>
