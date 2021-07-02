@@ -1,8 +1,28 @@
-{% extends 'base.html' %}
-
-{% block style %}
-
+{% extends 'base.html' %} {% block style %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/rSlider.min.css' %}" />
+<script src="{% static 'js/rSlider.min.js' %} "></script>
 <style>
+    button {
+      display: block;
+      background-color: #1d1f25;
+      border: 1px solid #eb24ad;
+      cursor: pointer;
+      padding: 5px 10px 6px 7px;
+      color: #cccccc;
+      border-radius: 3px;
+    }
+    button img {
+      border: 0;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+    }
+    button.subm:hover {
+      background-color: #eb24ad;
+      border: 1px solid #1d1f25;
+      color: #1d1f25;
+      border-radius: 3px;
+    }
     ul.page2_{
        text-align:left;
        list-style:none;
@@ -58,6 +78,7 @@
 {% endblock %}
 
 {% block body %}
+{% load static %}
     <form action="{% url 'create' %}"  method="post">
         {% csrf_token %}
         
@@ -275,11 +296,19 @@
                 </li>
             </ul>
         </div>
-        <button type="submit" class="subm" style="float: right; position:fixed; left: 1330px; bottom:50px; z-index:5">
-          <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
+        <button
+          type="submit"
+          class="subm"
+          style="float: right; position: fixed; left: 1330px; bottom: 50px; z-index: 5"
+        >
+          <img src="{% static 'arrow.png'%}" alt="" /> &nbsp 선택
         </button>
-        <button type="reset" class="subm" style="float: right; position:fixed; left: 1420px; bottom:50px; z-index:5">
-            <img src="resource\arrowbutton-next.png" alt=""> &nbsp 리셋
+        <button
+          type="reset"
+          class="subm"
+          style="float: right; position: fixed; left: 1420px; bottom: 50px; z-index: 5"
+        >
+          <img class="button" src="{% static 'arrow.png'%}" alt="" /> &nbsp 리셋
         </button>
     </form>
 
