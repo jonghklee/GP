@@ -21,11 +21,6 @@ def page1(request):
 
     return render(request, 'page1.html', {'softs':softlist, 'choosen':choosen})
 
-def getpage1(request):
-    a = request.POST('???')
-
-
-
 
 # name과 옵션선택이 분리되어있어서 문제발생 - request.POST[''] 방식으로 받아오면됨.
 

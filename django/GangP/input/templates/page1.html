@@ -66,8 +66,9 @@ function isboxchecked(softname){
     <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
     {%endif%}
     {%endfor%}
-    <button type="submit" style="position:fixed; left: 1300px; bottom:50px; z-index:5">
-        <img src="resource\arrowbutton-next.png" alt=""> &nbsp 선택
+    <button type="submit" class="subm" style="font-size:20px; font-family: 'Do Hyeon', sans-serif; color:white; float: right; position:fixed; left: 1330px; bottom:50px; z-index:5">선택</button>
+    <button type="reset" class="subm" style="float: right; position:fixed; left: 1420px; bottom:50px; z-index:5">
+        <img src="GP\django\GangP\input\templates\resource\arrowbutton-before.png" alt=""> &nbsp 리셋
     </button>
     
     <!--
