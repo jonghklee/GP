@@ -1,20 +1,19 @@
-
 {% extends 'base.html' %} {% block style %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/rSlider.min.css' %}" />
-<script src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script src="{% static 'js/rSlider.min.js' %} "></script>
 <script>
-function isboxchecked(softname){
-    if($('#'+softname).is(":checked") == true){
-        $('#'+softname+'_label').css('box-shadow', '0 0 0 #000000');
-    }else{
-        $('#'+softname+'_label').css('box-shadow', '20px 10px 20px #EB24AD');
+  function isboxchecked(softname) {
+    if ($("#" + softname).is(":checked") == true) {
+      $("#" + softname + "_label").css("box-shadow", "0 0 0 #000000");
+    } else {
+      $("#" + softname + "_label").css("box-shadow", "20px 10px 20px #EB24AD");
     }
-}
+  }
 </script>
 
 <style>
-    button {
+  button {
     display: block;
     background-color: #1d1f25;
     border: 1px solid #eb24ad;
@@ -22,102 +21,118 @@ function isboxchecked(softname){
     padding: 5px 10px 6px 7px;
     color: #cccccc;
     border-radius: 3px;
-    }
-    button img {
-      border: 0;
-      padding: 0;
-      width: 16px;
-      height: 16px;
-    }
-    button.subm:hover {
-      background-color: #eb24ad;
-      border: 1px solid #1d1f25;
-      color: #1d1f25;
-      border-radius: 3px;
-    }
-    input[type="checkbox"]{
-      display:none;
-    }
+  }
+  button img {
+    border: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+  }
+  button.subm:hover {
+    background-color: #eb24ad;
+    border: 1px solid #1d1f25;
+    color: #1d1f25;
+    border-radius: 3px;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
 
-    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 
-    hr{
-        border: 2px;
-        height: 2px;
-        margin-bottom: 20px;
-        background: linear-gradient( to right ,#EB24AD,#2B2C36);
-    }
-    .mid{
-        color:#EB24AD ;
-        font-family: 'Do Hyeon', sans-serif;
-        font-size: 30px;
-        font-weight: 800;
-        border: none;
-        margin-bottom: 0px;
-    }
-    img.page1img{
-        margin: 10px 5px 5px 5px;
-    }
-    img.page1img:hover{
-        margin: 7px 2px 2px 2px;
-        border:3px solid #EB24AD;
-    }
+  hr {
+    border: 2px;
+    height: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #eb24ad, #2b2c36);
+  }
+  .mid {
+    color: #eb24ad;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    border: none;
+    margin-bottom: 0px;
+  }
+  img.page1img {
+    margin: 10px 5px 5px 5px;
+  }
+  img.page1img:hover {
+    margin: 7px 2px 2px 2px;
+    border: 3px solid #eb24ad;
+  }
 </style>
-{% endblock %}
-
-{% block body %}
-{% load static %}
+{% endblock %} {% block body %} {% load static %}
 
 <form action="{% url 'page1_5' %}" method="POST">
-    {%csrf_token%}
+  {%csrf_token%}
 
-    <p class="mid">게임</p>
-    <hr >
-    {%for soft in softs%}
-    {%if soft.boonryu == '게임'%}
-    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img class="page1img" id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
-    {%endif%}
-    {%endfor%}
+  <p class="mid">게임</p>
+  <hr />
+  {%for soft in softs%} {%if soft.boonryu == '게임'%}
+  <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}" /><label
+    for="{{soft.name}}"
+    onClick="isboxchecked('{{soft.name}}')"
+    ><img
+      class="page1img"
+      id="{{soft.name}}_label"
+      src="{{soft.img.url}}"
+      width="250"
+      height="150"
+  /></label>
+  {%endif%} {%endfor%}
 
-    <p class="mid">프로그램</p>
-    <hr>
-    {%for soft in softs%}
-    {%if soft.boonryu == '공학'%}
-    <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}"/><label for="{{soft.name}}" onClick="isboxchecked('{{soft.name}}')"><img class="page1img" id="{{soft.name}}_label" src="{{soft.img.url}}" width="250" height="150" /></label>
-    {%endif%}
-    {%endfor%}
-    
-    
-    <!--
+  <p class="mid">프로그램</p>
+  <hr />
+  {%for soft in softs%} {%if soft.boonryu == '공학'%}
+  <input type="checkbox" name="name_{{soft.name}}" id="{{soft.name}}" /><label
+    for="{{soft.name}}"
+    onClick="isboxchecked('{{soft.name}}')"
+    ><img
+      class="page1img"
+      id="{{soft.name}}_label"
+      src="{{soft.img.url}}"
+      width="250"
+      height="150"
+  /></label>
+  {%endif%} {%endfor%}
+
+  <!--
     <div class="next">
         <a href="#" style="color:#1D1F25"><strong>다음</strong></a>
     </div>
     -->
 
-<button
-  type="submit"
-  class="subm"
-  style="float: right; position: fixed; left: 1330px; bottom: 120px; z-index: 5"
->
-  <img src="{% static 'arrow.png'%}" alt="" /> &nbsp 선택
-</button>
-<button
-  type="reset"
-  class="subm"
-  style="float: right; position: fixed; left: 1420px; bottom: 120px; z-index: 5"
->
-  <img class="button" src="{% static 'arrow.png'%}" alt="" /> &nbsp 리셋
-</button>    
+  <button
+    type="submit"
+    class="subm"
+    style="
+      float: right;
+      position: fixed;
+      right: 135px;
+      bottom: 60px;
+      z-index: 5;
+    "
+  >
+    <img src="{% static 'arrow.png'%}" alt="" /> &nbsp 선택
+  </button>
+  <button
+    type="reset"
+    class="subm"
+    style="float: right; position: fixed; right: 40px; bottom: 60px; z-index: 5"
+  >
+    <img class="button" src="{% static 'arrow.png'%}" alt="" /> &nbsp 리셋
+  </button>
 </form>
-<div class="side" >
+<div class="side">
   <ul class="side-container">
-      <li><a href="#" style="color:#EB24AD;">Software 선택</a></li>
-      <p style="color:#EB24AD;">▼</p>                      
-      <li><a href="#">Software 세부설정</a></li>
-      <p>▼</p>                      
-      <li><a href="#">추가기능</a></li>
-      <p>▼</p>                    
-      <li><a href="#">노트북 선택</a></li>
+    <li><a href="#" style="color: #eb24ad">Software 선택</a></li>
+    <p style="color: #eb24ad">▼</p>
+    <li><a href="#">Software 세부설정</a></li>
+    <p>▼</p>
+    <li><a href="#">추가기능</a></li>
+    <p>▼</p>
+    <li><a href="#">노트북 선택</a></li>
   </ul>
 </div>
 
