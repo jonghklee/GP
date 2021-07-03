@@ -65,8 +65,8 @@
     "use strict";
 
     var init = function () {
-      var slider3 = new rSlider({
-        target: "#slider3",
+      var slider1 = new rSlider({
+        target: "#battleground",
         values: ["하옵", "중옵", "상옵"],
         range: false,
         set: [5],
@@ -77,7 +77,51 @@
       });
 
       var slider2 = new rSlider({
-        target: "#slider2",
+        target: "#overwatch",
+        values: ["하옵", "기본"],
+        range: false,
+        set: [5],
+        tooltip: true,
+        onChange: function (vals) {
+          console.log(vals);
+        },
+      });
+
+      var slider3 = new rSlider({
+        target: "#LeagueofLegends",
+        values: ["하옵", "기본"],
+        range: false,
+        set: [5],
+        tooltip: true,
+        onChange: function (vals) {
+          console.log(vals);
+        },
+      });
+
+      var slider4 = new rSlider({
+        target: "#adobephotoshop",
+        values: ["하옵", "기본"],
+        range: false,
+        set: [5],
+        tooltip: true,
+        onChange: function (vals) {
+          console.log(vals);
+        },
+      });
+
+      var slider5 = new rSlider({
+        target: "#LOSTARK",
+        values: ["하옵", "기본"],
+        range: false,
+        set: [5],
+        tooltip: true,
+        onChange: function (vals) {
+          console.log(vals);
+        },
+      });
+
+      var slider6 = new rSlider({
+        target: "#MonsterHunter",
         values: ["하옵", "기본"],
         range: false,
         set: [5],
@@ -92,7 +136,7 @@
 </script>
 {% endblock %} {% block body %} {% load static %}
 <form action="{% url 'page2' %}" method="POST">
-  {%csrf_token%} {% for soft in softs%} {% if soft.version == 3%}
+  {%csrf_token%} {% for soft in softs%} {% if soft.version != 0%}
   <div class="softwarebox">
     <p class="software-name"><strong> {{soft.name}} </strong></p>
     <img class="software_image" src="{{soft.img.url}}" alt="image" />
@@ -101,18 +145,7 @@
     -->
     <!--label.for : id 값 가리킴-->
     <div class="slider-container">
-      <input type="text" id="slider3" class="invisible" />
-    </div>
-  </div>
-  {% elif soft.version == 2 %}
-  <div class="softwarebox">
-    <p class="software-name"><strong> {{soft.name}} </strong></p>
-    <img class="software_image" src="{{soft.img.url}}" alt="image" />
-    <!--
-    <label for="customrange" class="form-label">사양</label>
-    -->
-    <div class="slider-container">
-      <input type="text" id="slider2" class="invisible" />
+      <input type="text" id="{{soft.name}}" class="invisible" />
     </div>
   </div>
   {% else %}
@@ -121,32 +154,43 @@
     <img class="software_image" src="{{soft.img.url}}" alt="image" />
   </div>
   {% endif %} {% endfor %}
-<button
-  type="submit"
-  class="subm"
-  style="float: right; position: fixed; left: 1330px; bottom: 120px; z-index: 5"
->
-  <img src="{% static 'arrow.png'%}" alt="" /> &nbsp 선택
-</button>
-<button
-  type="reset"
-  class="subm"
-  style="float: right; position: fixed; left: 1420px; bottom: 120px; z-index: 5"
->
-  <img class="button" src="{% static 'arrow.png'%}" alt="" /> &nbsp 리셋
-</button>  
+  <button
+    type="submit"
+    class="subm"
+    style="
+      float: right;
+      position: fixed;
+      left: 1330px;
+      bottom: 120px;
+      z-index: 5;
+    "
+  >
+    <img src="{% static 'arrow.png'%}" alt="" /> &nbsp 선택
+  </button>
+  <button
+    type="reset"
+    class="subm"
+    style="
+      float: right;
+      position: fixed;
+      left: 1420px;
+      bottom: 120px;
+      z-index: 5;
+    "
+  >
+    <img class="button" src="{% static 'arrow.png'%}" alt="" /> &nbsp 리셋
+  </button>
 </form>
-<div class="side" >
+<div class="side">
   <ul class="side-container">
-      <li><a href="#" style="color:#EB24AD;">Software 선택</a></li>
-      <p style="color:#EB24AD;">▼</p>                      
-      <li><a href="#" style="color:#EB24AD;">Software 세부설정</a></li>
-      <p style="color:#EB24AD;">▼</p>                      
-      <li><a href="#">추가기능</a></li>
-      <p>▼</p>                    
-      <li><a href="#">노트북 선택</a></li>
+    <li><a href="#" style="color: #eb24ad">Software 선택</a></li>
+    <p style="color: #eb24ad">▼</p>
+    <li><a href="#" style="color: #eb24ad">Software 세부설정</a></li>
+    <p style="color: #eb24ad">▼</p>
+    <li><a href="#">추가기능</a></li>
+    <p>▼</p>
+    <li><a href="#">노트북 선택</a></li>
   </ul>
 </div>
-
 
 {% endblock %}
