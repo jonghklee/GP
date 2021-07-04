@@ -67,6 +67,11 @@
 <form action="{% url 'page1_5' %}" method="POST">
   {%csrf_token%}
 
+  <br />
+  <h1 style="display: inline">1. Software 선택 :</h1>
+  <span>노트북에서 작동시킬 소프트웨어를 선택하세요.</span>
+  <br />
+  <br />
   <p class="mid">게임</p>
   <hr />
   {%for soft in softs%} {%if soft.boonryu == '게임'%}
@@ -130,7 +135,7 @@
     <p style="color: #eb24ad">▼</p>
     <li><a href="#">Software 세부설정</a></li>
     <p>▼</p>
-    <li><a href="#">추가기능</a></li>
+    <li><a href="#">기타설정</a></li>
     <p>▼</p>
     <li><a href="#">노트북 선택</a></li>
   </ul>

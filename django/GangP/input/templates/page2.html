@@ -33,7 +33,7 @@
        background-color:#1D1F25;
        position: absolute;
        left: 100px;
-       top: 100px;  
+       top: 200px;  
        height: 490px;
        width:200px;
        border-radius:10px 0 10px;
@@ -44,7 +44,7 @@
        background-color:#1D1F25;
        position: absolute;
        left: 350px;
-       top: 100px;  
+       top: 200px;  
        height: 410px;
        width:200px;
        border-radius:10px 0 10px;
@@ -55,7 +55,7 @@
        background-color:#1D1F25;
        position: absolute;
        left: 600px;
-       top: 100px;  
+       top: 200px;  
        height: 410px;
        width:200px;
        border-radius:10px 0 10px;
@@ -66,7 +66,7 @@
        background-color:#1D1F25;
        position: absolute;
        left: 850px;
-       top: 100px;  
+       top: 200px;  
        height: 410px;
        width:250px;
        border-radius:10px 0 10px;
@@ -81,7 +81,10 @@
 {% load static %}
     <form action="{% url 'create' %}"  method="post">
         {% csrf_token %}
-        
+      <br />
+      <h1 style="display: inline">3. 기타설정</h1>
+      <br />
+      <br />
         <div class="box1">
             <script>
               function checkSelectAll1()  {
@@ -317,7 +320,7 @@
           <p style="color:#EB24AD;">▼</p>                      
           <li><a href="#" style="color:#EB24AD;">Software 세부설정</a></li>
           <p style="color:#EB24AD;">▼</p>                      
-          <li><a href="#" style="color:#EB24AD;">추가기능</a></li>
+          <li><a href="#" style="color:#EB24AD;">기타설정</a></li>
           <p style="color:#EB24AD;">▼</p>                    
           <li><a href="#">노트북 선택</a></li>
       </ul>
